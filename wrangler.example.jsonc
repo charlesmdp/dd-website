@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "big-digital-downloads",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-09-22",
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "big-digital-downloads-content",
+    "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_UUID",
+    "migrations_dir": "migrations"
+  }]
+}

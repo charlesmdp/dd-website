@@ -1,0 +1,9 @@
+/* Small accessibility additions; original Framer layout and motion are preserved. */
+html { scroll-padding-top: 110px; }
+:focus-visible { outline: 3px solid #8b36d9; outline-offset: 5px; }
+.bdd-skip-link { position: fixed; z-index: 99999; top: 8px; left: 16px; transform: translateY(-200%); padding: 12px 20px; color: #fff; background: #2a211d; border-radius: 8px; font: 16px system-ui; }
+.bdd-skip-link:focus { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

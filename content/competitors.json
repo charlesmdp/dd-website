@@ -1,0 +1,398 @@
+[
+  {
+    "slug": "sky-pilot",
+    "name": "Sky Pilot",
+    "source": "https://apps.shopify.com/sky-pilot",
+    "focus": "Streaming and subscription-led digital stores",
+    "intro": "Sky Pilot is worth considering when streaming, subscription integrations and timed customer access drive your business. BIG is a strong fit for merchants who want files, licence keys and custom or scheduled digital products in one Shopify workflow.",
+    "big": "Choose BIG when you want 500 GB of monthly bandwidth at $19.99 or 1 TB at $49.99, together with unlimited paid-plan orders. At these transfer levels, its published plans can cost less than Sky Pilot’s public tiers.",
+    "other": "Choose Sky Pilot when its streaming and subscription integrations are central to your offer. Compare the exact integration you need, not just the amount of storage.",
+    "caution": "Sky Pilot offers custom plans from $149/month. A custom quote may be cheaper than paying the public Growth overage rate for heavy transfer. Our examples do not claim to be its cheapest custom quote.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "100 MB",
+        "1 GB / month"
+      ],
+      [
+        "Starter",
+        "$9",
+        "10 GB",
+        "15 GB; $2 / extra GB"
+      ],
+      [
+        "Lite",
+        "$24.99",
+        "20 GB",
+        "50 GB; $1.50 / extra GB"
+      ],
+      [
+        "Growth",
+        "$54.99",
+        "Unlimited",
+        "200 GB; $1 / extra GB"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "✓ Growth",
+      "✓ Growth",
+      "✓ Scheduled releases listed",
+      "✓ White-label email on Lite",
+      "✓ Data export on Lite"
+    ],
+    "costs": [
+      "Starter · $9",
+      "Growth · $54.99",
+      "Growth · $454.99 with 400 GB overage; request a custom quote"
+    ]
+  },
+  {
+    "slug": "filemonk",
+    "name": "Filemonk",
+    "source": "https://apps.shopify.com/filemonk",
+    "focus": "Simple delivery with a low-cost unlimited-storage tier",
+    "intro": "Filemonk and BIG both serve Shopify merchants selling files, personalised digital content and protected PDFs. The useful distinction is how their plan capacity and your workflow fit together, rather than a long checklist of features both provide.",
+    "big": "BIG Starter includes 15 GB storage for $9.99, compared with Filemonk Lite’s 10 GB for $10. BIG also documents three delivery modes, order and licence-key exports, and API plus webhooks on Growth and Enterprise.",
+    "other": "Filemonk Plus advertises unlimited storage for $25/month and all features. It deserves a close look if storage is your main cost driver; BIG is not the cheaper unlimited-storage option.",
+    "caution": "Filemonk’s listing advertises unlimited downloads but does not publish a separate numeric bandwidth allowance. Ask about transfer and fair-use terms for a large-file store; do not treat an absent limit as a verified promise.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "250 MB",
+        "50 orders / month"
+      ],
+      [
+        "Lite",
+        "$10",
+        "10 GB",
+        "Unlimited orders"
+      ],
+      [
+        "Plus",
+        "$25",
+        "Unlimited",
+        "Unlimited orders; all features"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "✓ Listed",
+      "✓ Lite",
+      "✓ Custom content on Lite; schedule not stated",
+      "✓ Lite",
+      "— Export details not stated in listing"
+    ],
+    "costs": [
+      "Lite · $10*",
+      "Lite · $10*",
+      "Plus · $25*"
+    ],
+    "costNote": "*Storage and order-count fit only. Numeric transfer capacity is not stated on the listing; confirm it for these workloads."
+  },
+  {
+    "slug": "fileflare",
+    "name": "Fileflare",
+    "source": "https://apps.shopify.com/digital-assets",
+    "focus": "Large files, streaming and unlimited bandwidth",
+    "intro": "Fileflare has a clear strength: its published plans include unlimited bandwidth. BIG offers a lower-priced paid entry tier and a workflow covering standard, custom and scheduled products, but it should not be presented as the lowest-cost option for every large-file business.",
+    "big": "BIG Starter pairs 15 GB storage with PDF stamping and unlimited paid-plan orders for $9.99. It is a practical option for a store that needs protection and a modest catalogue without moving to Fileflare Basic at $19.",
+    "other": "Choose Fileflare when transfer volume dominates your costs, or when its in-store media streaming and own-storage options are important. Premium includes 1 TB storage and unlimited bandwidth at $39/month.",
+    "caution": "Fileflare’s own S3 integration starts on Growth; its API is listed on Basic. BIG’s API and webhooks start on Growth. Do not compare API access as though BIG’s cheapest plan includes it.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "1 GB",
+        "Unlimited bandwidth; 5 GB upgrade at $9"
+      ],
+      [
+        "Basic",
+        "$19",
+        "50 GB",
+        "Unlimited bandwidth"
+      ],
+      [
+        "Growth",
+        "$29",
+        "100 GB",
+        "Unlimited bandwidth"
+      ],
+      [
+        "Premium",
+        "$39",
+        "1 TB",
+        "Unlimited bandwidth"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "— Not stated in this listing",
+      "✓ Basic",
+      "✓ Custom products; scheduled releases listed",
+      "✓ Own sender on Premium",
+      "✓ Import listed; export details not stated"
+    ],
+    "costs": [
+      "Free · $0",
+      "Basic · $19",
+      "Premium · $39"
+    ]
+  },
+  {
+    "slug": "easy-digital-products",
+    "name": "Easy Digital Products (EDP)",
+    "source": "https://apps.shopify.com/easy-digital-products",
+    "focus": "Large storage allowances and API access",
+    "intro": "EDP is a capable choice for files and licence keys, with generous storage at its paid entry price. Its current paid plans include 100 digital orders per month, then charge per additional order. That is the key calculation for a high-volume Shopify store.",
+    "big": "BIG’s paid plans have no order-count surcharge. When a compact catalogue sells frequently, paying for storage and transfer rather than each extra digital order can make the monthly app cost easier to plan.",
+    "other": "Choose EDP if you need a large catalogue on a lower-priced tier or API access at a small budget. Its $14.99 plan includes 100 GB and its free plan lists API access, while BIG reserves API access for Growth and Enterprise.",
+    "caution": "Each extra digital order beyond the 100 included in an EDP paid plan costs $0.15. Its listing does not state a numeric monthly bandwidth limit, so the examples below calculate published storage and order charges only.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "100 MB",
+        "3 products; 30 orders / month"
+      ],
+      [
+        "Pro 100 GB",
+        "$14.99",
+        "100 GB",
+        "100 orders + $0.15 / extra order"
+      ],
+      [
+        "Pro 200 GB",
+        "$24.99",
+        "200 GB",
+        "100 orders + $0.15 / extra order"
+      ],
+      [
+        "Pro 500 GB",
+        "$44.99",
+        "500 GB",
+        "100 orders + $0.15 / extra order"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "✓ Available",
+      "✓ Paid plans",
+      "— Custom/scheduled workflow not stated",
+      "— Sender details not stated",
+      "— Export details not stated"
+    ],
+    "costs": [
+      "Pro 100 GB · $14.99*",
+      "Pro 100 GB · $149.99*",
+      "Pro 200 GB · $459.99*"
+    ],
+    "costNote": "*EDP amounts include published extra-order charges, exclude taxes, and require confirmation that the transfer workload is supported."
+  },
+  {
+    "slug": "shopify-digital-downloads",
+    "name": "Shopify Digital Products",
+    "source": "https://apps.shopify.com/digital-downloads",
+    "focus": "A free, native start for straightforward digital sales",
+    "intro": "Shopify’s own app, now listed as Shopify Digital Products, is a sensible place to start when you only need straightforward files and links. BIG becomes relevant when your business needs specialised delivery and operational controls.",
+    "big": "Choose BIG when PDF stamping, licence-key delivery, made-to-order digital work, scheduled releases or paid-plan exports are part of your offer. Evaluate these workflows with a real product and a test purchase.",
+    "other": "Choose Shopify’s app when its native product-admin workflow and free pricing meet your needs. A simple shop does not need a paid app merely to deliver its first file.",
+    "caution": "The current Shopify listing differs from older Digital Downloads comparisons. It now describes files, links, variants and customer-account access. We do not repeat outdated claims that those capabilities are missing.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "See current app limits",
+        "No paid tier listed"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "— Dedicated key workflow not stated",
+      "— Not stated in listing",
+      "— Custom/scheduled workflow not stated",
+      "— Sender details not stated",
+      "— Export details not stated"
+    ],
+    "costs": [
+      "Free · $0; verify current capacity",
+      "Free · $0; verify current capacity",
+      "Free · $0; verify current capacity"
+    ]
+  },
+  {
+    "slug": "sendowl",
+    "name": "SendOwl",
+    "source": "https://apps.shopify.com/sendowl",
+    "extraSource": "https://www.sendowl.com/pricing?hideAnnualPlans=true",
+    "focus": "Selling digital products across multiple platforms",
+    "intro": "SendOwl is broader than a Shopify delivery app. Its own checkout, payment links, upsells and cross-platform integrations may be valuable if Shopify is only one of your sales channels. BIG is designed around a Shopify store’s digital fulfilment.",
+    "big": "Choose BIG if you want Shopify-focused fulfilment without a plan tier based on your annual digital sales. Its paid entry price is $9.99, and higher plans publish larger monthly transfer allowances than SendOwl’s creator tiers.",
+    "other": "Choose SendOwl when you need its off-Shopify checkout and marketing features. Paying more can be reasonable if those capabilities replace other services you would otherwise buy.",
+    "caution": "SendOwl’s pricing page currently disagrees with itself about Launch and Grow bandwidth: plan cards show 10/20 GB, while its FAQ says 20/30 GB. Confirm those amounts with SendOwl. Its creator tiers also cap trailing annual sales and orders; higher business tiers may be required.",
+    "plans": [
+      [
+        "Launch",
+        "$39",
+        "Unlimited advertised; custom above 1 TB",
+        "5,000 orders / year; $10,000 sales / year"
+      ],
+      [
+        "Grow",
+        "$87",
+        "Same storage policy",
+        "25,000 orders / year; $36,000 sales / year"
+      ],
+      [
+        "Scale",
+        "$159",
+        "Same storage policy",
+        "50,000 orders / year; $100,000 sales / year"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "✓ Available",
+      "✓ All plans",
+      "✓ Preorders and drip content",
+      "✓ Branding tools; check sender setup",
+      "✓ CSV order reports"
+    ],
+    "costs": [
+      "Launch · $39",
+      "Business tier / quote needed for $120k annual sales",
+      "Business tier / quote needed for $360k annual sales"
+    ]
+  },
+  {
+    "slug": "pdf-pendora",
+    "name": "PDF Pendora",
+    "source": "https://apps.shopify.com/pendora-digital-download",
+    "focus": "A free starting point, with capacity to verify",
+    "intro": "Free is a price, not a capacity plan. Compare Pendora’s free offer with BIG’s published storage, bandwidth and workflow options before trusting either app with your catalogue.",
+    "big": "You want a clear capacity plan, custom and scheduled products, multilingual support and an upgrade path with published storage and bandwidth. BIG makes those allowances visible before you commit.",
+    "other": "Your budget is zero, your workflow is straightforward and you have tested your largest file and delivery experience. Pendora advertises core delivery, licence keys, watermarks and custom download pages. Get its applicable capacity limits in writing before moving a growing catalogue.",
+    "caution": "Pendora lists its price as Free, but the public publisher sources reviewed do not specify a single-file upload ceiling, total storage allowance or monthly bandwidth. Unlimited downloads does not establish unlimited storage or transfer. No future pricing commitment was found: confirm capacity, pricing terms and export options before migrating.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "Not stated in listing",
+        "Numeric storage and bandwidth limits not stated"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "✓ Available",
+      "✓ Watermarks listed; confirm workflow",
+      "— Custom/scheduled workflow not stated",
+      "— Sender details not stated",
+      "— Export details not stated"
+    ],
+    "costs": [
+      "Free · $0; capacity confirmation needed",
+      "Free · $0; capacity confirmation needed",
+      "Free · $0; capacity confirmation needed"
+    ]
+  },
+  {
+    "slug": "fetchapp",
+    "name": "FetchApp",
+    "source": "https://apps.shopify.com/fetchapp",
+    "focus": "Small catalogues and external storage",
+    "intro": "FetchApp offers inexpensive delivery tiers with unlimited paid-plan orders and bandwidth. Its entry storage allowances are small, so file size and whether you already host files elsewhere matter much more than the starting price.",
+    "big": "BIG Starter includes 15 GB of hosted storage for $9.99. That is a useful fit when you want to host a real catalogue in the app, rather than managing an external storage service or choosing a higher storage tier.",
+    "other": "Choose FetchApp if you have a tiny catalogue, already use external hosting, or want its cross-platform delivery workflow. Paid unlimited bandwidth can be valuable for popular small files.",
+    "caution": "FetchApp’s $10 plan lists the option to use your own storage. External storage costs and configuration are separate. More storage tiers exist beyond the four shown on Shopify, so request current pricing for larger catalogues.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "5 MB",
+        "25 orders / day"
+      ],
+      [
+        "$5 Monthly",
+        "$5",
+        "50 MB",
+        "Unlimited orders and bandwidth"
+      ],
+      [
+        "$10 Monthly",
+        "$10",
+        "2 GB",
+        "Unlimited orders and bandwidth; own storage option"
+      ],
+      [
+        "$20 Monthly",
+        "$20",
+        "5 GB",
+        "Unlimited orders and bandwidth"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "✓ Licence keys listed",
+      "— PDF stamping not stated",
+      "— Custom/scheduled workflow not stated",
+      "— Sender details not stated",
+      "— Export details not stated"
+    ],
+    "costs": [
+      "$10 Monthly · $10",
+      "Larger storage tier or own storage required",
+      "Larger storage tier or own storage required"
+    ]
+  },
+  {
+    "slug": "ldt-digital-downloads",
+    "name": "LDT Digital Downloads",
+    "source": "https://apps.shopify.com/ldt-digital-download-product",
+    "focus": "Strong storage value, readers and unlimited bandwidth",
+    "intro": "LDT combines file delivery with document readers, media players and generous plan allowances. It is a serious competitor on price and capacity. BIG is worth evaluating for its delivery workflow, support fit and operational needs, not because it is always cheaper.",
+    "big": "Choose BIG when its standard, custom and scheduled product setup fits your team, or when you need its documented order and licence-key exports and outgoing webhooks. Try your real workflow and speak with the team about migration.",
+    "other": "Choose LDT when unlimited bandwidth, EPUB watermarking, embedded readers or a low-cost API tier are decisive. Its Enterprise plan lists 300 GB storage and API access at $19.99/month.",
+    "caution": "LDT Starter costs $8.99 for 15 GB with unlimited bandwidth; BIG Starter costs $9.99 for 15 GB with 50 GB bandwidth. BIG should not be described as the price or transfer-capacity winner for that use case.",
+    "plans": [
+      [
+        "Free",
+        "$0",
+        "500 MB",
+        "30 orders / month"
+      ],
+      [
+        "Starter",
+        "$8.99",
+        "15 GB",
+        "Unlimited bandwidth and orders"
+      ],
+      [
+        "Enterprise",
+        "$19.99",
+        "300 GB",
+        "Unlimited bandwidth; API; media reader"
+      ],
+      [
+        "Ultra",
+        "$49.99",
+        "1 TB (1,024 GB)",
+        "Unlimited bandwidth; developer support"
+      ]
+    ],
+    "features": [
+      "✓ Available",
+      "✓ Available",
+      "✓ Starter; PDF and EPUB",
+      "✓ Enterprise",
+      "✓ Listed, including free plan",
+      "✓ Bulk import; export details not stated"
+    ],
+    "costs": [
+      "Starter · $8.99",
+      "Starter · $8.99",
+      "Enterprise · $19.99"
+    ]
+  }
+]

@@ -1,0 +1,2 @@
+content/legal/*.html -whitespace
+public/assets/runtime-v3/* -whitespace

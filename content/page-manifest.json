@@ -1,0 +1,310 @@
+{
+  "/": {
+    "title": "Shopify Digital Downloads App | BIG Digital Downloads",
+    "description": "Sell digital products on Shopify with BIG: ebooks, PDFs, templates, software and licence keys. Automatic delivery, PDF stamping and a free plan."
+  },
+  "/features": {
+    "title": "Shopify Digital Product App Features | BIG Digital Downloads",
+    "description": "Explore BIG features: instant, custom and scheduled digital delivery, licence keys, PDF stamping, branding, imports, API and webhooks."
+  },
+  "/terms-and-conditions": {
+    "title": "Terms & conditions | BIG Digital Downloads",
+    "description": "Read the terms & conditions for BIG Digital Downloads, operated by Penida SAS in France."
+  },
+  "/privacy-policy": {
+    "title": "Privacy policy | BIG Digital Downloads",
+    "description": "Read the privacy policy for BIG Digital Downloads, operated by Penida SAS in France."
+  },
+  "/gdpr": {
+    "title": "GDPR & your data | BIG Digital Downloads",
+    "description": "Read the gdpr & your data for BIG Digital Downloads, operated by Penida SAS in France."
+  },
+  "/faq": {
+    "title": "Shopify Digital Downloads FAQ | BIG",
+    "description": "Answers about selling digital products on Shopify: delivery, PDF stamping, licences, pricing, migration, custom orders and scheduled releases."
+  },
+  "/partners": {
+    "title": "Partner with BIG Digital Downloads",
+    "description": "Build a digital commerce business with BIG. Resources for Shopify agencies, experts and affiliate partners."
+  },
+  "/tools": {
+    "title": "Free Tools for Digital Product Sellers | BIG",
+    "description": "Watermark or merge PDFs, create QR codes, generate numbers and estimate bandwidth or digital product revenue. Free tools that run in your browser."
+  },
+  "/tools/pdf-watermark": {
+    "title": "PDF watermark \u2014 Free Online Tool | BIG",
+    "description": "Add a text watermark to every page. Your PDF stays in your browser. No signup. Processed locally in your browser."
+  },
+  "/tools/merge-pdf": {
+    "title": "Merge PDFs \u2014 Free Online Tool | BIG",
+    "description": "Combine several PDFs in the order you choose. No signup. Processed locally in your browser."
+  },
+  "/tools/bandwidth-calculator": {
+    "title": "Download bandwidth calculator \u2014 Free Online Tool | BIG",
+    "description": "Estimate your monthly data transfer and a matching BIG plan. No signup. Processed locally in your browser."
+  },
+  "/tools/custom-qr-code-generator": {
+    "title": "QR code generator \u2014 Free Online Tool | BIG",
+    "description": "Turn a product or download-page link into a downloadable QR code. No signup. Processed locally in your browser."
+  },
+  "/tools/custom-bulk-number-generator": {
+    "title": "Bulk number generator \u2014 Free Online Tool | BIG",
+    "description": "Create unique random numeric codes and export them as CSV. No signup. Processed locally in your browser."
+  },
+  "/tools/revenue-calculator": {
+    "title": "Digital product revenue calculator \u2014 Free Online Tool | BIG",
+    "description": "Estimate contribution after discounts, fees and app costs. No signup. Processed locally in your browser."
+  },
+  "/big-digital-downloads-vs-sky-pilot": {
+    "title": "BIG vs Sky Pilot: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and Sky Pilot: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/sky-pilot-alternatives": {
+    "title": "Sky Pilot Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to Sky Pilot for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-filemonk": {
+    "title": "BIG vs Filemonk: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and Filemonk: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/filemonk-alternatives": {
+    "title": "Filemonk Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to Filemonk for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-fileflare": {
+    "title": "BIG vs Fileflare: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and Fileflare: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/fileflare-alternatives": {
+    "title": "Fileflare Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to Fileflare for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-easy-digital-products": {
+    "title": "BIG vs Easy Digital Products (EDP): Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and Easy Digital Products (EDP): verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/easy-digital-products-alternatives": {
+    "title": "Easy Digital Products (EDP) Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to Easy Digital Products (EDP) for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-shopify-digital-downloads": {
+    "title": "BIG vs Shopify Digital Products: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and Shopify Digital Products: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/shopify-digital-downloads-alternatives": {
+    "title": "Shopify Digital Products Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to Shopify Digital Products for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-sendowl": {
+    "title": "BIG vs SendOwl: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and SendOwl: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/sendowl-alternatives": {
+    "title": "SendOwl Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to SendOwl for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-pdf-pendora": {
+    "title": "BIG vs PDF Pendora: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and PDF Pendora: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/pdf-pendora-alternatives": {
+    "title": "PDF Pendora Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to PDF Pendora for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-fetchapp": {
+    "title": "BIG vs FetchApp: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and FetchApp: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/fetchapp-alternatives": {
+    "title": "FetchApp Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to FetchApp for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/big-digital-downloads-vs-ldt-digital-downloads": {
+    "title": "BIG vs LDT Digital Downloads: Features & Pricing (2026)",
+    "description": "Compare BIG Digital Downloads and LDT Digital Downloads: verified plans, feature differences, usage examples and who should choose each Shopify app."
+  },
+  "/ldt-digital-downloads-alternatives": {
+    "title": "LDT Digital Downloads Alternatives for Shopify (2026) | BIG",
+    "description": "Explore alternatives to LDT Digital Downloads for Shopify digital products. Compare pricing, capacity, use cases and migration trade-offs with source links."
+  },
+  "/compare": {
+    "title": "Compare Shopify Digital Download Apps (2026) | BIG",
+    "description": "Compare BIG with nine established Shopify digital product apps. Sourced features, prices and practical guidance for your store."
+  },
+  "/alternatives": {
+    "title": "Shopify Digital Download App Alternatives (2026)",
+    "description": "Explore digital product app alternatives for Shopify, including Sky Pilot, Filemonk, Fileflare, EDP, SendOwl, LDT, FetchApp and more."
+  },
+  "/best-shopify-digital-download-apps": {
+    "title": "Best Shopify Digital Download Apps for Your Use Case (2026)",
+    "description": "A practical guide to ten Shopify digital product apps: compare fit, pricing, capacity and delivery workflows with official sources."
+  },
+  "/blog/add-download-button-thank-you-page-shopify": {
+    "title": "Add a Download Button to Your Shopify Thank-You Page | BIG",
+    "description": "Give customers access while their purchase is still in front of them."
+  },
+  "/blog/best-free-digital-download-app-shopify-in-2026": {
+    "title": "Best Free Digital Download Apps for Shopify: Compare the Limits | BIG",
+    "description": "A free plan is useful when its limits match your launch."
+  },
+  "/blog/best-free-low-cost-shopify-apps-selling-digital-products": {
+    "title": "Low-Cost Shopify Apps for Digital Products: A Practical Budget Guide | BIG",
+    "description": "The cheapest workable setup is the one that delivers your products without hidden operational work."
+  },
+  "/blog/best-place-to-sell-books-online-shopify-vs-marketplaces-(2026)": {
+    "title": "Sell Books on Shopify or a Marketplace? A Decision Guide | BIG",
+    "description": "Choose your book-sales channel based on discovery, customer experience and the work you are willing to own."
+  },
+  "/blog/best-place-to-sell-textbooks-online-for-maximum-profit": {
+    "title": "Selling Textbooks Online: Resale, Original Guides and Real Costs | BIG",
+    "description": "Selling a used physical textbook and selling a digital study guide are different businesses."
+  },
+  "/blog/best-sendowl-alternatives-for-shopify-in-2026": {
+    "title": "Moving from SendOwl to Shopify: An Alternatives and Migration Guide | BIG",
+    "description": "A migration should solve a concrete problem: a changing bill, a missing workflow or the desire to run fulfilment inside Shopify."
+  },
+  "/blog/best-shopify-digital-download-apps-in-2026-honest-comparison": {
+    "title": "How to Choose a Shopify Digital Download App in 2026 | BIG",
+    "description": "There is no useful universal winner for a tiny PDF store, a software vendor and a video publisher."
+  },
+  "/blog/big-digital-downloads-vs-fileflare.io": {
+    "title": "BIG or Fileflare? Choose by Catalogue Size and Transfer Volume | BIG",
+    "description": "Fileflare\u2019s unlimited bandwidth is a real advantage for heavy downloads."
+  },
+  "/blog/big-digital-downloads-vs-shopify-digital-downloads-why-merchants-switch": {
+    "title": "When to Move Beyond Shopify\u2019s Free Digital Products App | BIG",
+    "description": "Move when a specific requirement is unmet, not simply because your store has started making sales."
+  },
+  "/blog/digital-product-ideas-that-sell-20-proven-examples-for-2026": {
+    "title": "20 Digital Product Ideas to Validate Before You Build | BIG",
+    "description": "An idea is a starting hypothesis, not proof of demand. Choose a specific buyer and a repeatable task, then test a small useful product before building a large catalogue."
+  },
+  "/blog/digital-products-gta-6-extended-look-proved-will-sell": {
+    "title": "What GTA VI\u2019s Extended Look Can Teach Digital Product Creators | BIG",
+    "description": "A high-profile game reveal can suggest content ideas, but it does not prove that a specific digital product will sell."
+  },
+  "/blog/digital-products-to-sell-before-gta-6-drops": {
+    "title": "Digital Products Around a Game Launch: A Shopify Planning Guide | BIG",
+    "description": "A major game launch can be a deadline for an original creator product."
+  },
+  "/blog/electronic-software-distribution-(esd)-on-shopify-complete-guide": {
+    "title": "Electronic Software Distribution on Shopify: Files, Keys and Updates | BIG",
+    "description": "Electronic software distribution is more than sending an installer."
+  },
+  "/blog/how-to-bundle-upsell-digital-products-shopify": {
+    "title": "Bundle and Upsell Digital Products on Shopify Without Confusing Buyers | BIG",
+    "description": "A useful bundle solves a larger version of the same problem. Start with a coherent outcome, then make the included files and licence terms easy to understand."
+  },
+  "/blog/how-to-create-a-digital-product-from-scratch-(2026-step-by-step-guide)": {
+    "title": "Create a Digital Product from Scratch: From Problem to First Sale | BIG",
+    "description": "Start with a problem you understand well enough to solve."
+  },
+  "/blog/how-to-deliver-license-keys-automatically-on-shopify": {
+    "title": "Deliver Software Licence Keys Automatically on Shopify | BIG",
+    "description": "A good licence-key workflow sends each buyer the correct key, keeps the inventory consistent and makes activation support manageable."
+  },
+  "/blog/how-to-make-money-world-cup-2026-digital-products-shopify": {
+    "title": "Digital Products After the 2026 World Cup: What to Reuse Next | BIG",
+    "description": "The 2026 tournament is over."
+  },
+  "/blog/how-to-protect-digital-products-from-piracy-on-shopify-(5-layers)": {
+    "title": "Protect Digital Products on Shopify: Five Practical Layers | BIG",
+    "description": "You can reduce unauthorised sharing, but no downloadable file is impossible to copy."
+  },
+  "/blog/how-to-sell-art-online-from-digital-prints-to-licenses": {
+    "title": "Sell Digital Art on Shopify: Files, Prints and Licence Options | BIG",
+    "description": "Selling an artwork as a downloadable file is different from granting commercial use or shipping a physical print."
+  },
+  "/blog/how-to-sell-canva-templates-on-shopify-2026-step-by-step": {
+    "title": "Sell Canva Templates on Shopify: Links, Licensing and Delivery | BIG",
+    "description": "A Canva template product usually delivers access to an editable design, not ownership of the original working file."
+  },
+  "/blog/how-to-sell-digital-downloads-on-shopify-in-2026": {
+    "title": "Sell Digital Downloads on Shopify: A Complete Launch Checklist | BIG",
+    "description": "Shopify handles the storefront and checkout; a digital-delivery setup connects the purchase to the files or keys."
+  },
+  "/blog/how-to-sell-ebooks-and-pdfs-on-shopify-instead-of-amazon-kdp": {
+    "title": "Sell Ebooks and PDFs on Shopify Alongside Your Publishing Strategy | BIG",
+    "description": "Direct ebook sales give you a storefront you can shape around your readers."
+  },
+  "/blog/how-to-sell-game-codes-and-gift-cards-on-shopify-(2026)": {
+    "title": "Sell Game Codes and Gift Cards on Shopify: Get the Workflow Right | BIG",
+    "description": "A game activation code, a third-party prepaid code and a Shopify store gift card are different products."
+  },
+  "/blog/how-to-sell-lightroom-presets-on-shopify-in-2026": {
+    "title": "Sell Lightroom Presets on Shopify: Compatibility and Delivery | BIG",
+    "description": "A preset pack should tell photographers what look it creates, which workflow it supports and how to install it."
+  },
+  "/blog/how-to-sell-music-and-audio-files-on-shopify-in-2026": {
+    "title": "Launch a Music or Audio Pack on Shopify: A Delivery Checklist | BIG",
+    "description": "A music release or sample pack needs more than an audio file."
+  },
+  "/blog/how-to-sell-music-on-shopify-mp3-wav-flac-audio-files": {
+    "title": "MP3, WAV or FLAC? Package Audio Downloads for Shopify | BIG",
+    "description": "Choose audio formats for the buyer\u2019s use, not just the smallest file."
+  },
+  "/blog/how-to-sell-notion-templates-on-shopify-2026": {
+    "title": "Sell Notion Templates on Shopify: A Reliable Access Workflow | BIG",
+    "description": "Selling a Notion template means helping the customer duplicate a usable workspace."
+  },
+  "/blog/how-to-sell-online-courses-on-shopify-without-a-course-platform-(2026)": {
+    "title": "Sell Course Files on Shopify Without a Full Course Platform | BIG",
+    "description": "You can sell a downloadable course as a collection of videos, audio and resources."
+  },
+  "/blog/how-to-sell-printables-on-shopify-2026-step-by-step": {
+    "title": "Sell Printables on Shopify: From Export to a Good First Print | BIG",
+    "description": "A printable is successful when it produces the expected result on the buyer\u2019s printer. Clear dimensions and a tested file matter as much as the product mockup."
+  },
+  "/blog/how-to-sell-seasonal-digital-products-on-shopify": {
+    "title": "Sell Seasonal Digital Products Without Starting Over Every Season | BIG",
+    "description": "Seasonal products are easier to maintain when dates, artwork and delivery are treated separately."
+  },
+  "/blog/how-to-sell-world-cup-canva-templates-on-shopify": {
+    "title": "Sports Canva Templates on Shopify: Updating a World Cup Collection | BIG",
+    "description": "A sports template collection needs current information, original design and clear buyer instructions."
+  },
+  "/blog/how-to-set-up-software-downloads-on-shopify": {
+    "title": "Set Up Software Downloads on Shopify: A Release-Day Checklist | BIG",
+    "description": "A software launch should make it easy to choose the correct installer, understand the licence and recover from an installation problem."
+  },
+  "/blog/how-to-use-coupon-codes-to-scale-digital-product-sales-on-shopify": {
+    "title": "Use Shopify Discount Codes for Digital Products Without Hiding the Margin | BIG",
+    "description": "Discounts can support a specific campaign, but a lower price does not automatically create a better business."
+  },
+  "/blog/pdf-stamping-on-shopify-how-to-stop-ebook-piracy-in-2026": {
+    "title": "PDF Stamping on Shopify: What It Can and Cannot Do for Ebook Piracy | BIG",
+    "description": "PDF stamping can make a downloaded ebook less anonymous and discourage casual redistribution."
+  },
+  "/blog/pdf-stamping-on-shopify-how-to-watermark-digital-products-automatically": {
+    "title": "Automatically Watermark PDF Purchases on Shopify | BIG",
+    "description": "An automatic stamping workflow should produce a readable customer copy after a purchase without manual editing."
+  },
+  "/blog/pdf-vs-video-vs-template-what-sells-best-on-shopify": {
+    "title": "PDF, Video or Template: Choose a Digital Product Format by Use Case | BIG",
+    "description": "There is no format that always sells best."
+  },
+  "/blog/shopify-digital-downloads-vs-big-digital-downloads-compared": {
+    "title": "Shopify Digital Products vs BIG: A Buyer\u2019s Checklist | BIG",
+    "description": "Shopify\u2019s free app and BIG overlap on digital file delivery. The decision is whether specialised workflows justify a paid plan for your particular store."
+  },
+  "/blog/shopify-s-native-digital-downloads-app-what-it-can-t-do-in-2026": {
+    "title": "Shopify\u2019s Native Digital Products App: Capabilities and Gaps to Check | BIG",
+    "description": "A fair review of Shopify\u2019s own app starts with the current listing. Its capabilities have changed, so categorical claims copied from older articles can mislead a buyer."
+  },
+  "/blog/the-best-printables-to-sell-on-shopify-in-2026-sports-seasons-and-repeat-sales": {
+    "title": "Sports and Seasonal Printables: Build a Reusable Shopify Catalogue | BIG",
+    "description": "A sports printable should be easy to update, easy to print and useful beyond one search spike."
+  },
+  "/blog/why-your-shopify-digital-download-emails-keep-going-to-spam-(and-how-to-fix-it)": {
+    "title": "Shopify Download Emails Going to Spam? Diagnose the Delivery Chain | BIG",
+    "description": "An email marked as sent is not the same as an email placed in the inbox."
+  },
+  "/blog": {
+    "title": "Shopify Digital Product Guides & Ideas | BIG Journal",
+    "description": "Practical guides to selling ebooks, templates, software, music and other digital products on Shopify. Learn delivery, protection, pricing and growth."
+  },
+  "/ai": {
+    "title": "BIG Digital Downloads: Product Facts & Sources",
+    "description": "A factual guide to BIG Digital Downloads: features, pricing, limitations, sources and machine-readable documentation."
+  }
+}

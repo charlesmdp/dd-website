@@ -1,0 +1,12 @@
+{
+  "slug": "your-next-digital-product",
+  "title": "Your Next Digital Product",
+  "description": "A practical guide to preparing a digital product for your Shopify store.",
+  "category": "Delivery",
+  "status": "draft",
+  "cover_path": "/assets/editorial/features-digital-commerce.webp",
+  "body_html": "<p>Replace this sample with your finished introduction.</p><h2>Prepare your product</h2><p>Replace this paragraph with specific, verified advice.</p><h2>Test the delivery</h2><p>Describe the exact steps a merchant should take.</p>",
+  "sources": [
+    { "label": "Shopify: digital products", "url": "https://help.shopify.com/en/manual/products/digital-service-product" }
+  ]
+}

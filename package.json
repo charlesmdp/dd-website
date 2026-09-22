@@ -1,0 +1,23 @@
+{
+  "name": "big-digital-downloads-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && npm run db:local && npm run preview",
+    "db:local": "wrangler d1 migrations apply DB --local --config wrangler.local.jsonc",
+    "db:remote": "wrangler d1 migrations apply DB --remote --config wrangler.production.jsonc",
+    "db:configure": "node scripts/configure-d1.mjs",
+    "check": "node --test tests/*.test.mjs",
+    "preview": "wrangler pages dev dist --d1 DB=00000000-0000-0000-0000-000000000001 --compatibility-date 2026-09-22 --port 8788",
+    "content:save": "node scripts/content.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.136.3"
+  }
+}

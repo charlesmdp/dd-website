@@ -1,0 +1,197 @@
+{
+  "review_date": "2026-09-22",
+  "review_timezone": "Europe/Paris",
+  "reviewed_at_utc": "2026-09-22T20:11:50Z",
+  "purpose": "Factual research and original public publisher assets for a BIG versus Pendora comparison.",
+  "capture_method": "Downloaded bytes from CDN URLs linked by the official Shopify App Store gallery; no image generation, crop, compositing, or other alteration. Inspected every local image with view_image.",
+  "scope_note": "These are genuine publisher-provided listing assets, including marketing mockups. They are not independently captured authenticated in-app screenshots or independent proof of feature operation.",
+  "assets": [
+    {
+      "file": "big-products.jpeg",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/817a90f35936cdf58072f90611991a6a/desktop_screenshot/CPi11NKc3pQDEAE%3D.jpeg?height=900&quality=90&width=1600",
+      "listing_url": "https://apps.shopify.com/digital-download-products",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Orange promotional overview: product formats, downloads, keys and scheduled/custom products.",
+      "alterations": "none",
+      "bytes": 428112,
+      "sha256": "1dd7705c7d74eef47809d0c4dd97f9d83a9ee5f4cbdbe67063a82c4329de3a6c"
+    },
+    {
+      "file": "big-email.jpeg",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/817a90f35936cdf58072f90611991a6a/desktop_screenshot/CPu23dKc3pQDEAE%3D.jpeg?height=900&quality=90&width=1600",
+      "listing_url": "https://apps.shopify.com/digital-download-products",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Orange promotional card with phone mockup showing an order/download page and setup feature list.",
+      "alterations": "none",
+      "bytes": 415999,
+      "sha256": "eb557ac97a7214459f6ab90a649c4bf2da8f0adb0d58a1ae68a576eabfd6875d"
+    },
+    {
+      "file": "big-checkout.jpeg",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/817a90f35936cdf58072f90611991a6a/desktop_screenshot/CKmc59Kc3pQDEAE%3D.jpeg?height=900&quality=90&width=1600",
+      "listing_url": "https://apps.shopify.com/digital-download-products",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Orange promotional card with phone/email mockup showing automatic file delivery.",
+      "alterations": "none",
+      "bytes": 342711,
+      "sha256": "ee90dcb548a0b017042bb17931f56b8a53ec24cf14af5faa9920702fc0486401"
+    },
+    {
+      "file": "big-files.jpeg",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/817a90f35936cdf58072f90611991a6a/desktop_screenshot/CMn-8NKc3pQDEAE%3D.jpeg?height=900&quality=90&width=1600",
+      "listing_url": "https://apps.shopify.com/digital-download-products",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Orange promotional card with administration mockup about tracking customer downloads.",
+      "alterations": "none",
+      "bytes": 302280,
+      "sha256": "ac8e795a28d6c9b7400560795facb32a6c3425fbf2e9d523c8fe694ddf4a86de"
+    },
+    {
+      "file": "pendora-how-it-works.png",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/8cbf8db3640a3b80c9b7fa74b36933ea/desktop_screenshot/CNHjkaWq5IcDEAE%3D.png?height=900&width=1600",
+      "listing_url": "https://apps.shopify.com/pendora-digital-download",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Blue/purple promotional card: three delivery steps, order page and email mockups, yellow Download buttons.",
+      "alterations": "none",
+      "bytes": 1872641,
+      "sha256": "325b9dcf3e075fda8c7ce3e13940c3f6e86e26f2b335c893b09dce765c9e2971"
+    },
+    {
+      "file": "pendora-features.png",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/8cbf8db3640a3b80c9b7fa74b36933ea/desktop_screenshot/CMuLn9azg4YDEAE%3D.png?height=900&width=1600",
+      "listing_url": "https://apps.shopify.com/pendora-digital-download",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Blue/purple promotional card: fulfilment, keys, varied digital content and product/customer mockups.",
+      "alterations": "none",
+      "bytes": 1772296,
+      "sha256": "e0c702976836c9ad47f8a44e87c97721fb7061e5d4d756020806e2d207931d84"
+    },
+    {
+      "file": "pendora-more.png",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/8cbf8db3640a3b80c9b7fa74b36933ea/desktop_screenshot/CMbIqtazg4YDEAE%3D.png?height=900&width=1600",
+      "listing_url": "https://apps.shopify.com/pendora-digital-download",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Blue/purple promotional card: analytics, storage/order tracking and access mockups. No reliable numeric quota stated.",
+      "alterations": "none",
+      "bytes": 1662925,
+      "sha256": "11c041d33ce15da6b945abfcd96d669cce51ce5af42e481c4d79e67b209bc52b"
+    },
+    {
+      "file": "pendora-download-page.jpeg",
+      "source_url": "https://cdn.shopify.com/app-store/listing_images/8cbf8db3640a3b80c9b7fa74b36933ea/desktop_screenshot/CKLHq8Sq5IcDEAE%3D.jpeg?height=900&quality=90&width=1600",
+      "listing_url": "https://apps.shopify.com/pendora-digital-download",
+      "source_kind": "Official publisher Shopify listing image",
+      "width": 1600,
+      "height": 900,
+      "reviewed": true,
+      "download_date": "2026-09-22",
+      "description": "Blue/purple promotional mockup labelled as branded custom download page, with yellow Download buttons.",
+      "alterations": "none",
+      "bytes": 205426,
+      "sha256": "7c6e2645584b5cc2b43ec59ff920a72cc2e1f804c18ebe4748e175d1d06cfa03"
+    }
+  ],
+  "sources": [
+    {
+      "file": "big-listing.html",
+      "url": "https://apps.shopify.com/digital-download-products",
+      "download_date": "2026-09-22",
+      "kind": "Public source snapshot, unchanged HTML; corresponding TXT is extracted text for research.",
+      "bytes": 246874,
+      "sha256": "68a70e01c3a6a26c1f869d41a62a11ebd267919afd0f81f64f6a5a307e39fca5"
+    },
+    {
+      "file": "pendora-listing.html",
+      "url": "https://apps.shopify.com/pendora-digital-download",
+      "download_date": "2026-09-22",
+      "kind": "Public source snapshot, unchanged HTML; corresponding TXT is extracted text for research.",
+      "bytes": 217537,
+      "sha256": "fc715e0ba732a30a2e037fe1b072a24fae969900e4166266bfd655a63296586e"
+    },
+    {
+      "file": "pumper-listing.html",
+      "url": "https://apps.shopify.com/pumper-quantity-breaks-product-bundles-discounts",
+      "download_date": "2026-09-22",
+      "kind": "Public source snapshot, unchanged HTML; corresponding TXT is extracted text for research.",
+      "bytes": 251616,
+      "sha256": "ff7412a0b8e9dc64061b154f31388759ab2a7e3398400efccc005a140694d46a"
+    },
+    {
+      "file": "pumper-privacy.html",
+      "url": "https://www.pumper.run/privacy-policy/",
+      "download_date": "2026-09-22",
+      "kind": "Public source snapshot, unchanged HTML; corresponding TXT is extracted text for research.",
+      "bytes": 32324,
+      "sha256": "6f282d9adb4add5616e13d779aa8ffc532214ee2fe9b3bf8c4cd9b51f7b91a64"
+    },
+    {
+      "file": "pendora-linked-privacy.html",
+      "url": "https://proveway.com/blog/privacy-policy/",
+      "download_date": "2026-09-22",
+      "kind": "Public source snapshot, unchanged HTML; corresponding TXT is extracted text for research.",
+      "bytes": 100575,
+      "sha256": "7cdb0f3f78a4fb7f12313ab3c0e1d35733e139264d568150b33486d366c9fe82"
+    },
+    {
+      "file": "pendora-critical-reviews.html",
+      "url": "https://apps.shopify.com/pendora-digital-download/reviews?ratings%5B%5D=1",
+      "download_date": "2026-09-22",
+      "kind": "Public source snapshot, unchanged HTML; corresponding TXT is extracted text for research.",
+      "bytes": 168257,
+      "sha256": "5aec1858a7742146c42c7a98d3c7c1aca53e764b2ca391655b742b6c01a473fe"
+    },
+    {
+      "file": "big-faq.html",
+      "url": "https://www.bigdigitaldownload.com/faq",
+      "download_date": "2026-09-22",
+      "kind": "Public source snapshot, unchanged HTML; corresponding TXT is extracted text for research.",
+      "bytes": 288159,
+      "sha256": "25bb7a975e3e4e8141af9389792310f0772f46bc5df7f8b62a9e5b666469058c"
+    },
+    {
+      "file": "pumper-historical-pricing-review-1576231.html",
+      "url": "https://apps.shopify.com/reviews/1576231",
+      "kind": "Stable publisher-hosted merchant-review permalink, not an official pricing announcement",
+      "download_date": "2026-09-22",
+      "bytes": 119481,
+      "sha256": "9d15a94e4a49788bd550badaf42251f3f9170acee08005c6ec0bdbef79e0a7bd"
+    },
+    {
+      "file": "pumper-reviews-newest-278.html",
+      "url": "https://apps.shopify.com/pumper-quantity-breaks-product-bundles-discounts/reviews?page=278&sort_by=newest",
+      "kind": "Live source page containing STIM merchant review; pagination can change.",
+      "download_date": "2026-09-22",
+      "bytes": 244962,
+      "sha256": "49b63ebd6c3f05934f381ffbf1d423af46c974d68f936acda9db98dc94cc3bfb"
+    }
+  ],
+  "repository_note": "Only big-email.jpeg and pendora-download-page.jpeg are included under public/assets/evidence/. Other files describe research snapshots not distributed with this repository."
+}
