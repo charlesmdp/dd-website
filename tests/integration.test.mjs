@@ -65,7 +65,8 @@ test('published new content appears in sitemap and canonical redirects preserve 
 });
 test('preview noindex, correct errors and static marketing delivery',async()=>{
  for(const path of ['/','/features','/big-digital-downloads-vs-pdf-pendora']){
-  const r=await fetch(base+path);assert.equal(r.status,200,path);assert.equal(r.headers.get('X-Robots-Tag'),'noindex, follow');
+  const r=await fetch(base+path,{redirect:'manual'});assert.equal(r.status,200,path);
+  const text=await r.text();assert.ok(/<meta(?=[^>]*name="robots")(?=[^>]*content="noindex, nofollow")[^>]*>/.test(text),path+" preview robots");assert.equal(r.headers.get('X-Robots-Tag'),'noindex, nofollow');
  }
  assert.equal((await fetch(base+'/blog/no-such-guide')).status,404);
  assert.equal((await fetch(base+'/no-such-page')).status,404);
@@ -87,9 +88,38 @@ test('editor updates HTML, markdown, sources and publication state together',asy
  const md=await (await fetch(base+'/blog/'+sample.slug+'.md')).text();assert.ok(md.includes('## Prepare your product'));assert.ok(md.includes('Shopify: digital products'));
 });
 test('missing binding is explicit in health; database failures return a temporary error',async()=>{
+ globalThis.HTMLRewriter=class {on(){return this}transform(result){return result}};
  const worker=(await import('../dist/_worker.js')).default;
  const assets={fetch:async()=>new Response('Static initial preview')};
  const missing=await worker.fetch(new Request(base+'/api/health'),{ASSETS:assets});assert.equal(missing.status,503);assert.equal((await missing.json()).database,'not_bound');
  const staticPreview=await worker.fetch(new Request(base+'/blog'),{ASSETS:assets});assert.equal(await staticPreview.text(),'Static initial preview');
+ // HTML transformation is exercised by the real worker tests above; Node has no HTMLRewriter.
+ globalThis.HTMLRewriter=class {on(){return this}transform(result){return result}};
  const broken=await worker.fetch(new Request(base+'/blog'),{ASSETS:assets,DB:{prepare(){throw new Error('test outage')}}});assert.equal(broken.status,503);assert.equal(broken.headers.get('Retry-After'),'60');assert.ok((await broken.text()).includes('The journal will be back shortly'));
+});
+
+test('canonical marketing paths are 200 and slash aliases redirect once',async()=>{
+ const pages=JSON.parse(readFileSync('content/page-manifest.json','utf8'));
+ for(const path of Object.keys(pages).filter(p=>!p.startsWith('/blog/')&&p!=='/')){
+  const canonical=await fetch(base+path,{redirect:'manual'});assert.equal(canonical.status,200,path);
+  const alias=await fetch(base+path+'/',{redirect:'manual'});assert.equal(alias.status,301,path);assert.equal(alias.headers.get('location'),base+path);
+ }
+ const home=await (await fetch(base)).text();assert.equal((home.match(/<h1[ >]/g)||[]).length,1);assert.ok(Buffer.byteLength(home)<700000);assert.ok(home.includes('5.0/5 from 862 Shopify reviews'));assert.ok(home.includes('id="live-support"'));
+});
+test('article reading layout has an inline contents panel and illustrated content',async()=>{
+ const r=await fetch(base+'/blog/'+articles[19].slug);const html=await r.text();
+ assert.ok(html.includes('<details class="article-toc">'));assert.ok(!html.includes('<aside class="site-toc">'));assert.ok(html.includes('class="article-figure"'));assert.ok(html.includes('class="article-example"'));
+});
+
+test('production is indexable, previews are not, and the apex redirects to www',async()=>{
+ const {Miniflare,convertV4MiniflareOptions}=await import('miniflare');
+ const mf=new Miniflare(convertV4MiniflareOptions({modules:true,script:readFileSync('dist/_worker.js','utf8'),compatibilityDate:'2026-09-22',serviceBindings:{ASSETS:async request=>new Response(readFileSync(join(resolve('dist'),new URL(request.url).pathname)),{headers:{'Content-Type':'application/octet-stream'}})}}));
+ try {
+  for(const [host,robots] of [['www.bigdigitaldownload.com','index, follow, max-image-preview:large'],['dd-website-cl5.pages.dev','noindex, nofollow']]){
+   const r=await mf.dispatchFetch('https://'+host+'/features');assert.equal(r.status,200);
+   const html=await r.text();assert.ok(html.includes('content="'+robots+'"'),host);assert.ok(html.includes('https://www.bigdigitaldownload.com/features'));
+  }
+  const apex=await mf.dispatchFetch('https://bigdigitaldownload.com/features?ref=test',{redirect:'manual'});
+  assert.equal(apex.status,301);assert.equal(apex.headers.get('location'),'https://www.bigdigitaldownload.com/features?ref=test');
+ } finally {await mf.dispose()}
 });

@@ -1,0 +1,42 @@
+{
+  "tool": "Built-in ImageGen",
+  "style": "Cream paper and ceramic still lifes, coral orange, pale lilac and charcoal; landscape 3:2; no text or logos.",
+  "images": [
+    {
+      "name": "ebook-studio",
+      "prompt": "A beautifully crafted open ebook reader, an orange clothbound book and two ivory workbook pages with elegant abstract editorial layout. Tiny charcoal bookmark, a lilac paper tab. The subject is ebooks and PDF products."
+    },
+    {
+      "name": "template-studio",
+      "prompt": "Three floating editable design template cards with coral orange geometric shapes, a charcoal cursor arrow and lilac typography blocks, beside a fan of colour swatches. Original abstract designs, no third-party logos. The subject is selling Canva-style templates."
+    },
+    {
+      "name": "license-studio",
+      "prompt": "A sculptural orange key passing through an ivory software window, a neat charcoal serial-code card with abstract unreadable strokes, and a small lilac check seal. The subject is secure software licence delivery."
+    },
+    {
+      "name": "audio-studio",
+      "prompt": "An orange vinyl record, a pair of premium ivory headphones, a small charcoal waveform tile and a pale lilac audio file card. A music producer's digital product collection."
+    },
+    {
+      "name": "video-studio",
+      "prompt": "An elegant ivory screen with a sculptural orange play triangle, two pale lilac lesson cards, a tiny charcoal film strip and a neatly rolled workbook. Downloadable videos and online lessons."
+    },
+    {
+      "name": "pdf-protection",
+      "prompt": "A stack of ivory PDF pages with abstract fine line layouts, a warm orange shield embossed with a check and a lilac rubber stamp resting beside the pages. The metaphor is personalized PDFs and responsible protection, never an unbreakable lock."
+    },
+    {
+      "name": "art-studio",
+      "prompt": "An orange-framed abstract digital art print, a pale lilac drawing tablet and charcoal stylus, two smaller ivory art prints with beautiful original sunset geometry. Art licensing and print-ready downloadable creations."
+    },
+    {
+      "name": "software-studio",
+      "prompt": "A sculptural ivory laptop showing simple orange code brackets, a floating lilac download arrow and neatly stacked charcoal and cream software package tiles. Digital software distribution."
+    },
+    {
+      "name": "delivery-studio",
+      "prompt": "A curated ivory digital storefront window with three small coral ebook, lilac music and charcoal template tiles, a warm orange arrow flowing into a beautifully folded envelope and a small ivory download tray. Automatic delivery from a digital store to a buyer."
+    }
+  ]
+}

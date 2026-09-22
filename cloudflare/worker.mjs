@@ -32,7 +32,7 @@ function sourcesHTML(post,sources) {
 }
 function articleHTML(post,sources,related) {
  const toc=JSON.parse(post.toc_json);
- const body=`<div class="reading-progress" aria-hidden="true"></div><header class="article-hero"><div class="site-wrap"><div class="site-breadcrumb"><a href="/">Home</a> / <a href="/blog">The BIG journal</a> / ${esc(post.category)}</div><div class="article-heading-grid"><div><span class="site-kicker">${esc(post.category)}</span><h1>${esc(post.title)}</h1><div class="article-byline"><img src="/assets/media/3aed8c41fe6de0b62874.png" width="40" height="40" alt=""><div><strong>${esc(post.author)}</strong><span>${esc(date(post.updated_at))} · ${post.reading_minutes} min read</span></div></div></div><img class="article-cover" src="${esc(cover(post))}" width="1536" height="1024" alt="" fetchpriority="high"></div></div></header><div class="site-wrap article-content-wrap"><div class="site-editorial"><article class="site-prose">${post.body_html}${sourcesHTML(post,sources)}<p class="article-plain"><a href="${articlePath(post)}.md">Read this guide as plain text →</a></p></article><aside class="site-toc"><strong>In this guide</strong>${toc.map(([id,title])=>`<a href="#${esc(id)}">${esc(title)}</a>`).join('')}<a href="#sources">Sources & review</a></aside></div></div>`+(related.length?section('Keep learning','A useful next read.',`<div class="site-grid">${related.map(card).join('')}</div>`):'')+CONFIG.cta;
+ const body=`<div class="reading-progress" aria-hidden="true"></div><header class="article-hero"><div class="site-wrap"><div class="site-breadcrumb"><a href="/">Home</a> / <a href="/blog">The BIG journal</a> / ${esc(post.category)}</div><div class="article-heading-grid"><div><span class="site-kicker">${esc(post.category)}</span><h1>${esc(post.title)}</h1><div class="article-byline"><img src="/assets/media/3aed8c41fe6de0b62874.png" width="40" height="40" alt=""><div><strong>${esc(post.author)}</strong><span>${esc(date(post.updated_at))} · ${post.reading_minutes} min read</span></div></div></div><img class="article-cover" src="${esc(cover(post))}" width="1536" height="1024" alt="" fetchpriority="high"></div></div></header><div class="site-wrap article-content-wrap"><div class="site-editorial"><article class="site-prose"><details class="article-toc"><summary><span>In this guide</span><span class="toc-label">Jump to a section +</span></summary><nav aria-label="Article contents">${toc.map(([id,title])=>`<a href="#${esc(id)}">${esc(title)}</a>`).join('')}<a href="#sources">Sources & review</a></nav></details>${post.body_html}${sourcesHTML(post,sources)}<p class="article-plain"><a href="${articlePath(post)}.md">Read this guide as plain text →</a></p></article></div></div>`+(related.length?section('Keep learning','A useful next read.',`<div class="site-grid">${related.map(card).join('')}</div>`):'')+CONFIG.cta;
  return documentHTML(articlePath(post),post.title+' | BIG',post.description,body,post);
 }
 function markdown(post,sources) {
@@ -42,16 +42,28 @@ async function missing(request,env) {
  const asset=await env.ASSETS.fetch(new Request(new URL('/404.html',request.url),request));
  return new Response(asset.body,{status:404,headers:asset.headers});
 }
+async function staticPage(request,env,path) {
+ const file=CONFIG.staticFiles[path];
+ if(!file)return env.ASSETS.fetch(request);
+ const asset=await env.ASSETS.fetch(new Request(new URL(file,request.url),request));
+ const headers=new Headers(asset.headers);headers.set('Content-Type','text/html; charset=utf-8');
+ return new Response(asset.body,{status:asset.status,headers});
+}
 async function route(request,env) {
  const url=new URL(request.url), path=url.pathname;
  if (!['GET','HEAD'].includes(request.method)) return response('Method not allowed',405,'text/plain; charset=utf-8');
+ if(url.hostname==='bigdigitaldownload.com')return Response.redirect('https://www.bigdigitaldownload.com'+path+url.search,301);
+ if(path.startsWith('/_html/'))return missing(request,env);
+ if(path==='/robots.txt')return response('User-agent: *\nAllow: /\n'+(url.hostname===new URL(CONFIG.base).hostname?'\nSitemap: '+CONFIG.base+'/sitemap.xml\n':''),200,'text/plain; charset=utf-8');
+ const clean=path.replace(/\/index\.html$/,'').replace(/\/$/,'')||'/';
+ if(path!==clean && CONFIG.pages[clean])return Response.redirect(new URL(clean+url.search,url.origin),301);
  if (path==='/api/health') {
   if (!env.DB) return response(JSON.stringify({ok:false,database:'not_bound'}),503,'application/json');
   const row=await env.DB.prepare("SELECT COUNT(*) AS count FROM posts WHERE status='published'").first();
   return response(JSON.stringify({ok:true,database:'ready',publishedArticles:row.count}),200,'application/json');
  }
  // The initial static library remains reviewable before the Pages DB binding is added.
- if (!env.DB) return env.ASSETS.fetch(request);
+ if (!env.DB) return staticPage(request,env,path);
  if (path.startsWith('/blog/')) {
   const redirect=await env.DB.prepare('SELECT target_path,status_code FROM redirects WHERE source_path=?').bind(path).first();
   if (redirect && /^\/(?!\/)/.test(redirect.target_path) && !/[\\\r\n]/.test(redirect.target_path)) return Response.redirect(new URL(redirect.target_path,url.origin),redirect.status_code);
@@ -87,7 +99,7 @@ async function route(request,env) {
   }
   return response(body,200,'text/plain; charset=utf-8');
  }
- return env.ASSETS.fetch(request);
+ return staticPage(request,env,path);
 }
 export default {
  async fetch(request,env) {
@@ -104,7 +116,12 @@ export default {
   headers.set('X-Frame-Options','SAMEORIGIN');
   const url=new URL(request.url);
   const isPreview=url.hostname!==new URL(CONFIG.base).hostname;
-  if (isPreview || result.status>=400 || url.pathname.endsWith('.md') || url.pathname.startsWith('/llms') || url.pathname==='/api/health') headers.set('X-Robots-Tag','noindex, follow');
+  const robots=isPreview?'noindex, nofollow':result.status>=400?'noindex, follow':'index, follow, max-image-preview:large';
+  if (isPreview || result.status>=400 || url.pathname.endsWith('.md') || url.pathname.startsWith('/llms') || url.pathname==='/api/health') headers.set('X-Robots-Tag',isPreview?'noindex, nofollow':'noindex, follow');
+  if((result.headers.get('Content-Type')||'').includes('text/html')) {
+    result=new HTMLRewriter().on('meta[name="robots"]',{element(el){el.setAttribute('content',robots);}}).transform(result);
+    headers.delete('Content-Length');headers.delete('ETag');
+  }
   if (url.pathname.startsWith('/blog') || url.pathname==='/sitemap.xml' || url.pathname.startsWith('/llms') || url.pathname==='/api/health') headers.set('Cache-Control','no-cache');
   return new Response(request.method==='HEAD'?null:result.body,{status:result.status,statusText:result.statusText,headers});
  }

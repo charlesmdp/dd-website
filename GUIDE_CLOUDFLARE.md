@@ -50,7 +50,7 @@ npm run db:configure -- REMPLACER_PAR_LE_DATABASE_ID
 npm run db:remote
 ```
 
-La première commande ouvre la connexion Cloudflare. La deuxième crée `wrangler.production.jsonc`, un fichier local ignoré par Git. La troisième applique les deux migrations : structure de la base puis import des 40 articles, catégories et sources. Relancer cette commande n’importe pas les articles une seconde fois.
+La première commande ouvre la connexion Cloudflare. La deuxième crée `wrangler.production.jsonc`, un fichier local ignoré par Git. La troisième applique les migrations manquantes : structure de la base, import initial, puis améliorations éditoriales versionnées. Relancer cette commande n’importe pas les articles une seconde fois.
 
 **Vérifier le compte connecté.** `npx wrangler whoami` doit afficher le même compte que celui qui contient ta base dans le tableau de bord. Une connexion déjà enregistrée peut appartenir à un autre compte : dans ce cas, refaire `npx wrangler login` avec le bon compte. Une erreur « database could not be found » peut venir de cette différence de compte, même si le Database ID est correct. Il ne faut pas recréer la base pour corriger cette erreur.
 
@@ -96,7 +96,7 @@ Sur l’adresse `*.pages.dev` créée par Cloudflare :
 4. Ouvrir `/sitemap.xml` : les articles publiés doivent y figurer.
 5. Vérifier que les nouvelles modifications D1 apparaissent sans reconstruire le site.
 
-Les domaines de prévisualisation portent automatiquement `X-Robots-Tag: noindex, follow`. La référence canonique du site reste **`https://www.bigdigitaldownload.com`**.
+Les domaines de prévisualisation portent automatiquement `X-Robots-Tag: noindex, nofollow` et une balise meta robots identique. La référence canonique du site reste **`https://www.bigdigitaldownload.com`**.
 
 Lorsque cette version est validée, ajouter **`www.bigdigitaldownload.com`** dans **Pages → Custom domains**, puis suivre les instructions DNS affichées par Cloudflare. Configurer la redirection de `bigdigitaldownload.com` vers `www.bigdigitaldownload.com` si nécessaire. Le site existant reste en place tant que tu n’as pas changé le raccordement du domaine. [Domaines personnalisés Pages](https://developers.cloudflare.com/pages/configuration/custom-domains/).
 
@@ -149,3 +149,26 @@ Le journal utilise un rendu HTML côté serveur, avec métadonnées et données 
 - Le délai réel de conservation après désinstallation : les textes juridiques d’origine contiennent des délais divergents. Leur mise en page a été refaite, sans inventer de nouvel engagement.
 - Search Console : les 40 articles ont été repris, mais aucune sélection par trafic réel n’a pu être faite sans cette connexion.
 - Pendora : les sources publiques ne prouvent ni des limites d’upload « minuscules », ni une copie, ni un futur passage payant. Le site présente les limites non publiées, les captures authentiques et le témoignage daté relatif à Pumper avec son contexte.
+
+
+## Version éditoriale et SEO de septembre 2026
+
+- 86 pages indexables : 40 articles aux adresses historiques et 9 nouvelles pages commerciales par type de produit, en plus des pages existantes.
+- La migration `0003_editorial_refresh.sql` enrichit les articles existants sans créer de doublons ni modifier leur statut de publication.
+- Sommaire repliable dans le corps de l’article, illustrations WebP et dix guides approfondis.
+- Note et nombre d’avis centralisés dans `content/product.json` → `reviews`. Revoir cette valeur sur la fiche Shopify avant de l’actualiser.
+- Le Worker sert directement les URL sans slash. Les variantes avec slash redirigent en 301 vers la canonical, sans boucle Pages.
+- Le HTML de la homepage conserve une seule arborescence responsive et un seul H1. Les styles et illustrations vectorielles d’origine sont mis en cache séparément.
+- Le domaine principal reçoit `index, follow, max-image-preview:large`. Les erreurs restent en noindex. Tout autre hôte reçoit `noindex, nofollow`.
+
+### Déploiement manuel de secours
+
+Si la liaison GitHub est déconnectée, corriger l’intégration ou utiliser Wrangler avec les droits Pages appropriés, depuis le dossier du dépôt :
+
+```sh
+npm run build
+npm run check
+npx wrangler pages deploy dist --project-name dd-website --branch main
+```
+
+Vérifier le compte Cloudflare avant de publier. Importer les mises à jour D1 avec `npm run db:remote` après avoir sauvegardé la base et déployé les nouvelles images. Le projet Pages et le binding `DB` restent gérés dans le tableau de bord.

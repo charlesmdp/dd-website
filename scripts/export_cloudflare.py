@@ -1,7 +1,7 @@
 """Package the existing design and import the 40 articles into D1 once."""
 from pathlib import Path
 from bs4 import BeautifulSoup
-import json, re, runpy
+import json, re, runpy, hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
@@ -52,9 +52,16 @@ if not seed.exists():
 
 short_ai = (DIST / 'llms.txt').read_text().split('## Pages')[0]
 static_pages = {p: data for p,data in pages.items() if not p.startswith('/blog/')}
+static_files={}
+internal=DIST/'_html'; internal.mkdir(exist_ok=True)
+for path in pages:
+    original=DIST/('index.html' if path=='/' else path.strip('/')+'/index.html')
+    filename=hashlib.sha256(path.encode()).hexdigest()[:16]+'.data'
+    (internal/filename).write_bytes(original.read_bytes())
+    static_files[path]='/_html/'+filename
 config = {
     'base': g['BASE'], 'version': g['ASSET_VERSION'], 'header': g['header'](),
-    'footer': g['footer'](), 'cta': g['cta'](), 'pages': static_pages,
+    'footer': g['footer'](), 'cta': g['cta'](), 'pages': static_pages, 'staticFiles':static_files,
     'shortAI': short_ai,
     'fullStaticText': '\n\n'.join((DIST/(p.strip('/')+'.md')).read_text() for p in static_pages if p not in ['/','/blog'] and (DIST/(p.strip('/')+'.md')).exists()),
 }

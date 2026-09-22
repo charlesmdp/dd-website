@@ -8,7 +8,7 @@ for p in dist.rglob('*.html'):
  assert s.select_one('meta[name=description]'),p
  assert s.select_one('link[rel=canonical]'),p
  for ld in s.select('script[type="application/ld+json"]'):json.loads(ld.string)
- if p!=dist/'index.html' and len(s.select('h1'))!=1:issues.append((str(p),'H1 count'))
+ if len(s.select('h1'))!=1:issues.append((str(p),'H1 count'))
  for e in s.select('img[src],script[src],link[href],a[href]'):
   u=e.get('src') or e.get('href');parts=urlsplit(u)
   if not u.startswith('/') or u.startswith('//'):continue
@@ -36,12 +36,15 @@ for p,s in cache.items():
   if target in cache and not cache[target].find(id=parts.fragment):issues.append((p.relative_to(dist).as_posix(),'missing anchor '+u))
 assert len(list((dist/'assets/editorial').glob('*.webp')))==60
 assert len(json.loads((root/'content/blog-manifest.json').read_text()))==40
-manifest=json.loads((root/'content/page-manifest.json').read_text());assert len(manifest)==77
+manifest=json.loads((root/'content/page-manifest.json').read_text());assert len(manifest)==86
 assert len([x for x in manifest if x.startswith('/big-digital-downloads-vs-')])==9
 assert len([x for x in manifest if x.endswith('-alternatives')])==9
 assert len([x for x in manifest if x.startswith('/tools/')])==6
+assert len([x for x in manifest if x.startswith('/sell-')])==9
+assert (dist/'index.html').stat().st_size<700000
+assert not cache[dist/'index.html'].select('#pricing,#faq')
 if issues:
  print(json.dumps(issues[:40],indent=2));print('issues',len(issues));sys.exit(1)
-print('Validated 77 indexable pages, 40 preserved blog routes, 9 comparisons, 9 alternatives, 6 tools, 60 images. Local links, image refs, schemas and anchors pass.')
+print('Validated 86 indexable pages, 40 preserved blog routes, 9 comparisons, 9 alternatives, 6 tools, 60 images. Local links, image refs, schemas and anchors pass.')
 sizes={p.relative_to(dist).as_posix():len(gzip.compress(p.read_bytes())) for p in [dist/'features/index.html',dist/'blog/index.html',dist/'index.html',dist/'assets/site.css',dist/'assets/site.js']}
 print('Gzip sizes in bytes:',sizes)

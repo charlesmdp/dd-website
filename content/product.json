@@ -1,26 +1,116 @@
 {
- "plans":[
- {"name":"Starter","price":9.99,"storage":"15 GB","bandwidth":"50 GB / month","api":false,"tag":"Launch your digital business"},
- {"name":"Pro","price":19.99,"storage":"50 GB","bandwidth":"500 GB / month","api":false,"tag":"Room for your growing catalogue"},
- {"name":"Growth","price":49.99,"storage":"1 TB","bandwidth":"1 TB / month","api":true,"tag":"Built for ambitious digital stores"},
- {"name":"Enterprise","price":99.99,"storage":"Unlimited","bandwidth":"1 TB / month + $0.023 / extra GB","api":true,"tag":"For your largest digital catalogue"}],
- "faq":[
- ["Can I sell digital products on Shopify?","Yes. Create a Shopify product, connect its files or licence keys in BIG, and deliver the purchase automatically. You can sell digital items alongside physical products in the same store."],
- ["What kinds of digital products can I sell?","Ebooks, PDFs, printables, courses as downloadable files, videos, music, design assets, Lightroom presets, Notion and Canva template access links, software and licence keys. You must own or have permission to sell the content."],
- ["How do customers receive their purchase?","Customers can access downloads from their delivery email and the Shopify thank-you or order-status experience. Test both routes with an order before launch, including on mobile."],
- ["Can I sell a custom, made-to-order digital product?","Yes. Use Custom Digital Products for work created after purchase, such as a commissioned illustration, a personalised recording or a bespoke design. Deliver the finished file when it is ready."],
- ["Can I schedule a product release?","Yes. Scheduled Digital Products unlock content at a specific date and time. They are useful for ebook launches, album releases and preorders. Check the release time and timezone in the app before publishing your offer."],
- ["Does BIG support software licence keys?","Yes. BIG supports licence-key delivery. Paid plans include unlimited licence keys and exports. Delivering a key is different from running an activation server: your software must validate its own licences."],
- ["Can I watermark PDFs automatically?","Yes. PDF stamping is available on paid plans. It helps discourage sharing by personalising a buyer’s PDF. Use an unprotected PDF and test the result. No watermark can prevent every copy or screenshot."],
- ["Can I limit the number of downloads?","Yes. Download limits let you control access to a purchase. Use a sensible allowance so a legitimate customer can retry a failed download or use another device."],
- ["Can my emails and download pages match my brand?","Yes. Customise the download experience, colours and messaging. Paid plans include a custom sender email and multilingual support. Follow the app’s sender setup steps and send a test email."],
- ["Can I import existing orders or move from another app?","Yes. Paid plans include past-order imports and exports of orders and licence keys. Keep your source export, map files to the right products and test previous buyers’ access before switching off your former app."],
- ["Are products, orders and downloads unlimited?","Paid plans include unlimited products, orders, downloads and licence keys. Storage and monthly bandwidth are still plan-specific. Unlimited download count does not mean unlimited data transfer."],
- ["What is the difference between storage and bandwidth?","Storage is the total size of the files you host. Bandwidth is the data transferred when customers download them. A 100 MB file downloaded 1,000 times uses about 100 GB of bandwidth, before retries or extra downloads."],
- ["Is there a free plan?","Yes. The free plan includes 250 MB of storage, 50 orders, unlimited products and unlimited licence keys. Check the Shopify listing and the in-app billing screen for the current limits and billing period before installing."],
- ["Which plans include the REST API and outgoing webhooks?","Growth and Enterprise include the REST API and outgoing webhooks. Starter and Pro do not. These features connect digital fulfilment to your existing workflow."],
- ["Can I sell video courses with BIG?","You can deliver course videos and supporting files as digital products. If you need progress tracking, quizzes, certificates or a full learning management system, verify that workflow separately before choosing your setup."],
- ["Who builds BIG Digital Downloads?","BIG Digital Downloads is built in France by the team behind Penida. Read our privacy policy and GDPR information for data handling and contact details."],
- ["How can I get help?","Contact the team through the support interface inside the app. You can also read the public documentation or find support details on our Shopify App Store listing."],
- ["How should I choose a plan?","Start with the size of your catalogue, expected monthly downloads and whether you need API access or webhooks. Our free bandwidth calculator estimates transfer needs. Review actual usage after launch and before a large promotion."]]
+  "plans": [
+    {
+      "name": "Starter",
+      "price": 9.99,
+      "storage": "15 GB",
+      "bandwidth": "50 GB / month",
+      "api": false,
+      "tag": "Launch your digital business"
+    },
+    {
+      "name": "Pro",
+      "price": 19.99,
+      "storage": "50 GB",
+      "bandwidth": "500 GB / month",
+      "api": false,
+      "tag": "Room for your growing catalogue"
+    },
+    {
+      "name": "Growth",
+      "price": 49.99,
+      "storage": "1 TB",
+      "bandwidth": "1 TB / month",
+      "api": true,
+      "tag": "Built for ambitious digital stores"
+    },
+    {
+      "name": "Enterprise",
+      "price": 99.99,
+      "storage": "Unlimited",
+      "bandwidth": "1 TB / month + $0.023 / extra GB",
+      "api": true,
+      "tag": "For your largest digital catalogue"
+    }
+  ],
+  "faq": [
+    [
+      "Can I sell digital products on Shopify?",
+      "Yes. Create a Shopify product, connect its files or licence keys in BIG, and deliver the purchase automatically. You can sell digital items alongside physical products in the same store."
+    ],
+    [
+      "What kinds of digital products can I sell?",
+      "Ebooks, PDFs, printables, courses as downloadable files, videos, music, design assets, Lightroom presets, Notion and Canva template access links, software and licence keys. You must own or have permission to sell the content."
+    ],
+    [
+      "How do customers receive their purchase?",
+      "Customers can access downloads from their delivery email and the Shopify thank-you or order-status experience. Test both routes with an order before launch, including on mobile."
+    ],
+    [
+      "Can I sell a custom, made-to-order digital product?",
+      "Yes. Use Custom Digital Products for work created after purchase, such as a commissioned illustration, a personalised recording or a bespoke design. Deliver the finished file when it is ready."
+    ],
+    [
+      "Can I schedule a product release?",
+      "Yes. Scheduled Digital Products unlock content at a specific date and time. They are useful for ebook launches, album releases and preorders. Check the release time and timezone in the app before publishing your offer."
+    ],
+    [
+      "Does BIG support software licence keys?",
+      "Yes. BIG supports licence-key delivery. Paid plans include unlimited licence keys and exports. Delivering a key is different from running an activation server: your software must validate its own licences."
+    ],
+    [
+      "Can I watermark PDFs automatically?",
+      "Yes. PDF stamping is available on paid plans. It helps discourage sharing by personalising a buyer’s PDF. Use an unprotected PDF and test the result. No watermark can prevent every copy or screenshot."
+    ],
+    [
+      "Can I limit the number of downloads?",
+      "Yes. Download limits let you control access to a purchase. Use a sensible allowance so a legitimate customer can retry a failed download or use another device."
+    ],
+    [
+      "Can my emails and download pages match my brand?",
+      "Yes. Customise the download experience, colours and messaging. Paid plans include a custom sender email and multilingual support. Follow the app’s sender setup steps and send a test email."
+    ],
+    [
+      "Can I import existing orders or move from another app?",
+      "Yes. Paid plans include past-order imports and exports of orders and licence keys. Keep your source export, map files to the right products and test previous buyers’ access before switching off your former app."
+    ],
+    [
+      "Are products, orders and downloads unlimited?",
+      "Paid plans include unlimited products, orders, downloads and licence keys. Storage and monthly bandwidth are still plan-specific. Unlimited download count does not mean unlimited data transfer."
+    ],
+    [
+      "What is the difference between storage and bandwidth?",
+      "Storage is the total size of the files you host. Bandwidth is the data transferred when customers download them. A 100 MB file downloaded 1,000 times uses about 100 GB of bandwidth, before retries or extra downloads."
+    ],
+    [
+      "Is there a free plan?",
+      "Yes. The free plan includes 250 MB of storage, 50 orders, unlimited products and unlimited licence keys. Check the Shopify listing and the in-app billing screen for the current limits and billing period before installing."
+    ],
+    [
+      "Which plans include the REST API and outgoing webhooks?",
+      "Growth and Enterprise include the REST API and outgoing webhooks. Starter and Pro do not. These features connect digital fulfilment to your existing workflow."
+    ],
+    [
+      "Can I sell video courses with BIG?",
+      "You can deliver course videos and supporting files as digital products. If you need progress tracking, quizzes, certificates or a full learning management system, verify that workflow separately before choosing your setup."
+    ],
+    [
+      "Who builds BIG Digital Downloads?",
+      "BIG Digital Downloads is built in France by the team behind Penida. Read our privacy policy and GDPR information for data handling and contact details."
+    ],
+    [
+      "How can I get help?",
+      "Contact the team through the support interface inside the app. You can also read the public documentation or find support details on our Shopify App Store listing."
+    ],
+    [
+      "How should I choose a plan?",
+      "Start with the size of your catalogue, expected monthly downloads and whether you need API access or webhooks. Our free bandwidth calculator estimates transfer needs. Review actual usage after launch and before a large promotion."
+    ]
+  ],
+  "reviews": {
+    "rating": "5.0",
+    "count": 862,
+    "verified_at": "2026-09-22",
+    "url": "https://apps.shopify.com/digital-download-products/reviews"
+  }
 }

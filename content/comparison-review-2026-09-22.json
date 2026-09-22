@@ -1,0 +1,237 @@
+{
+  "reviewed_on": "2026-09-22",
+  "method": "Official Shopify listings checked against the existing feature and monthly-plan comparison dataset. No independent performance benchmark or ranking claimed.",
+  "apps": [
+    {
+      "name": "Sky Pilot",
+      "source": "https://apps.shopify.com/sky-pilot",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "100 MB",
+          "1 GB / month"
+        ],
+        [
+          "Starter",
+          "$9",
+          "10 GB",
+          "15 GB; $2 / extra GB"
+        ],
+        [
+          "Lite",
+          "$24.99",
+          "20 GB",
+          "50 GB; $1.50 / extra GB"
+        ],
+        [
+          "Growth",
+          "$54.99",
+          "Unlimited",
+          "200 GB; $1 / extra GB"
+        ]
+      ],
+      "caution": "Sky Pilot offers custom plans from $149/month. A custom quote may be cheaper than paying the public Growth overage rate for heavy transfer. Our examples do not claim to be its cheapest custom quote."
+    },
+    {
+      "name": "Filemonk",
+      "source": "https://apps.shopify.com/filemonk",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "250 MB",
+          "50 orders / month"
+        ],
+        [
+          "Lite",
+          "$10",
+          "10 GB",
+          "Unlimited orders"
+        ],
+        [
+          "Plus",
+          "$25",
+          "Unlimited",
+          "Unlimited orders; all features"
+        ]
+      ],
+      "caution": "Filemonk\u2019s listing advertises unlimited downloads but does not publish a separate numeric bandwidth allowance. Ask about transfer and fair-use terms for a large-file store; do not treat an absent limit as a verified promise."
+    },
+    {
+      "name": "Fileflare",
+      "source": "https://apps.shopify.com/digital-assets",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "1 GB",
+          "Unlimited bandwidth; 5 GB upgrade at $9"
+        ],
+        [
+          "Basic",
+          "$19",
+          "50 GB",
+          "Unlimited bandwidth"
+        ],
+        [
+          "Growth",
+          "$29",
+          "100 GB",
+          "Unlimited bandwidth"
+        ],
+        [
+          "Premium",
+          "$39",
+          "1 TB",
+          "Unlimited bandwidth"
+        ]
+      ],
+      "caution": "Fileflare\u2019s own S3 integration starts on Growth; its API is listed on Basic. BIG\u2019s API and webhooks start on Growth. Do not compare API access as though BIG\u2019s cheapest plan includes it."
+    },
+    {
+      "name": "Easy Digital Products (EDP)",
+      "source": "https://apps.shopify.com/easy-digital-products",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "100 MB",
+          "3 products; 30 orders / month"
+        ],
+        [
+          "Pro 100 GB",
+          "$14.99",
+          "100 GB",
+          "100 orders + $0.15 / extra order"
+        ],
+        [
+          "Pro 200 GB",
+          "$24.99",
+          "200 GB",
+          "100 orders + $0.15 / extra order"
+        ],
+        [
+          "Pro 500 GB",
+          "$44.99",
+          "500 GB",
+          "100 orders + $0.15 / extra order"
+        ]
+      ],
+      "caution": "Each extra digital order beyond the 100 included in an EDP paid plan costs $0.15. Its listing does not state a numeric monthly bandwidth limit, so the examples below calculate published storage and order charges only."
+    },
+    {
+      "name": "Shopify Digital Products",
+      "source": "https://apps.shopify.com/digital-downloads",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "See current app limits",
+          "No paid tier listed"
+        ]
+      ],
+      "caution": "The current Shopify listing differs from older Digital Downloads comparisons. It now describes files, links, variants and customer-account access. We do not repeat outdated claims that those capabilities are missing."
+    },
+    {
+      "name": "SendOwl",
+      "source": "https://apps.shopify.com/sendowl",
+      "plans": [
+        [
+          "Launch",
+          "$39",
+          "Unlimited advertised; custom above 1 TB",
+          "5,000 orders / year; $10,000 sales / year"
+        ],
+        [
+          "Grow",
+          "$87",
+          "Same storage policy",
+          "25,000 orders / year; $36,000 sales / year"
+        ],
+        [
+          "Scale",
+          "$159",
+          "Same storage policy",
+          "50,000 orders / year; $100,000 sales / year"
+        ]
+      ],
+      "caution": "SendOwl\u2019s pricing page currently disagrees with itself about Launch and Grow bandwidth: plan cards show 10/20 GB, while its FAQ says 20/30 GB. Confirm those amounts with SendOwl. Its creator tiers also cap trailing annual sales and orders; higher business tiers may be required."
+    },
+    {
+      "name": "PDF Pendora",
+      "source": "https://apps.shopify.com/pendora-digital-download",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "Not stated in listing",
+          "Numeric storage and bandwidth limits not stated"
+        ]
+      ],
+      "caution": "Pendora lists its price as Free, but the public publisher sources reviewed do not specify a single-file upload ceiling, total storage allowance or monthly bandwidth. Unlimited downloads does not establish unlimited storage or transfer. No future pricing commitment was found: confirm capacity, pricing terms and export options before migrating."
+    },
+    {
+      "name": "FetchApp",
+      "source": "https://apps.shopify.com/fetchapp",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "5 MB",
+          "25 orders / day"
+        ],
+        [
+          "$5 Monthly",
+          "$5",
+          "50 MB",
+          "Unlimited orders and bandwidth"
+        ],
+        [
+          "$10 Monthly",
+          "$10",
+          "2 GB",
+          "Unlimited orders and bandwidth; own storage option"
+        ],
+        [
+          "$20 Monthly",
+          "$20",
+          "5 GB",
+          "Unlimited orders and bandwidth"
+        ]
+      ],
+      "caution": "FetchApp\u2019s $10 plan lists the option to use your own storage. External storage costs and configuration are separate. More storage tiers exist beyond the four shown on Shopify, so request current pricing for larger catalogues."
+    },
+    {
+      "name": "LDT Digital Downloads",
+      "source": "https://apps.shopify.com/ldt-digital-download-product",
+      "plans": [
+        [
+          "Free",
+          "$0",
+          "500 MB",
+          "30 orders / month"
+        ],
+        [
+          "Starter",
+          "$8.99",
+          "15 GB",
+          "Unlimited bandwidth and orders"
+        ],
+        [
+          "Enterprise",
+          "$19.99",
+          "300 GB",
+          "Unlimited bandwidth; API; media reader"
+        ],
+        [
+          "Ultra",
+          "$49.99",
+          "1 TB (1,024 GB)",
+          "Unlimited bandwidth; developer support"
+        ]
+      ],
+      "caution": "LDT Starter costs $8.99 for 15 GB with unlimited bandwidth; BIG Starter costs $9.99 for 15 GB with 50 GB bandwidth. BIG should not be described as the price or transfer-capacity winner for that use case."
+    }
+  ]
+}

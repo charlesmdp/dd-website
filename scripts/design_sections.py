@@ -11,8 +11,8 @@ def brand_section(g):
 
 def go_section(g):
  icon,button=g['icon'],g['button']
- categories=[('files','Ebooks & PDFs'),('paint','Design & templates'),('key','Software & keys'),('download','Music & video')]
- chips=''.join('<a href="/features">'+icon(i)+'<span>'+n+'</span></a>' for i,n in categories)
+ categories=[('files','Ebooks & PDFs','/sell-ebooks-on-shopify'),('paint','Design & templates','/sell-canva-templates-on-shopify'),('key','Software & keys','/sell-license-keys-on-shopify'),('download','Music & video','/sell-music-on-shopify')]
+ chips=''.join('<a href="'+path+'">'+icon(i)+'<span>'+n+'</span></a>' for i,n,path in categories)
  return f'''<section class="site-section go-section" id="go-to"><div class="site-wrap"><div class="go-layout"><div class="go-copy"><span class="site-kicker">Your store. Your possibilities.</span><h2>Whatever you create.<br><em>Make it a BIG thing.</em></h2><p class="site-lead">The digital downloads app for your Shopify store. Sell files, keys and custom creations from one place.</p>{button('Find your way to sell','/features')}</div><div class="go-art"><img src="/assets/editorial/features-digital-commerce.webp" width="1536" height="1024" alt="Ebooks, music, software and creative files ready for a digital store" loading="lazy"><span class="go-art-label">{icon('box')} One app. All your digital products.</span></div></div><div class="product-chip-row">{chips}</div><div class="audience-line"><span>For first-time creators.</span><span>For established brands.</span><span>For your next big idea.</span></div></div></section>'''
 
 def mode_section(g):
