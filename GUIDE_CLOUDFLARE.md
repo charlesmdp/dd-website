@@ -2,6 +2,14 @@
 
 Le dépôt contient le site complet et les 40 articles. Il reste à créer les ressources dans **ton compte Cloudflare**, à relier la base à Pages et à connecter ton domaine après vérification.
 
+## Où coller les commandes ?
+
+Les blocs qui commencent par `git`, `npm` ou `npx` se lancent dans **l’application Terminal de ton ordinateur**. Sur Mac : Cmd + Espace, écrire « Terminal », puis Entrée. Exécuter les commandes dans le dossier `dd-website`, une ligne à la fois.
+
+L’onglet **Console** de Cloudflare D1 accepte uniquement du **SQL**. Y coller `npx wrangler login` provoque donc l’erreur `near "npx": syntax error` : cela ne veut pas dire que la base est cassée.
+
+Si la base existe déjà, **ne pas relancer `d1 create`** : passer directement à l’étape 3 avec son Database ID. Si le projet est déjà ouvert dans Codex, son terminal peut aussi servir ; les commandes partent alors du dossier du projet.
+
 ## 1. Récupérer et tester le site
 
 Installer Node.js 22 et Python 3.11 ou plus si nécessaire, puis :
@@ -23,9 +31,9 @@ Dans Cloudflare, ouvrir **Storage & databases → D1 SQL Database → Create dat
 - Dans **Data location**, choisir **Specify jurisdiction → European Union**.
 - Copier le **Database ID** obtenu.
 
-La juridiction se choisit à la création. Elle concerne l’exécution et le stockage de **cette base de contenu** ; elle ne garantit pas que tout le site, le CDN, les journaux ou les données de l’app Shopify restent dans l’UE. C’est pour cela que la bannière du site dit que BIG est créé dans l’UE et porte attention aux données, sans promettre un hébergement intégralement européen. [Documentation Cloudflare sur la localisation D1](https://developers.cloudflare.com/d1/configuration/data-location/).
+La juridiction se choisit à la création et ne peut pas être ajoutée ensuite à une base existante. Si la base a été créée sans juridiction UE, on peut continuer avec elle ; pour passer à une juridiction UE plus tard, il faudra créer une nouvelle base, y importer le contenu puis changer le binding Pages. Elle concerne l’exécution et le stockage de **cette base de contenu** ; elle ne garantit pas que tout le site, le CDN, les journaux ou les données de l’app Shopify restent dans l’UE. C’est pour cela que la bannière du site dit que BIG est créé dans l’UE et porte attention aux données, sans promettre un hébergement intégralement européen. [Documentation Cloudflare sur la localisation D1](https://developers.cloudflare.com/d1/configuration/data-location/).
 
-Alternative en ligne de commande, après connexion :
+Alternative dans le Terminal de ton ordinateur, uniquement si la base n’existe pas encore :
 
 ```sh
 npx wrangler login
@@ -34,7 +42,7 @@ npx wrangler d1 create big-digital-downloads-content --jurisdiction=eu
 
 ## 3. Importer les 40 articles
 
-Depuis le dossier du dépôt :
+Dans le **Terminal de ton ordinateur**, depuis le dossier du dépôt (pas dans la console D1 du navigateur) :
 
 ```sh
 npx wrangler login
@@ -43,6 +51,8 @@ npm run db:remote
 ```
 
 La première commande ouvre la connexion Cloudflare. La deuxième crée `wrangler.production.jsonc`, un fichier local ignoré par Git. La troisième applique les deux migrations : structure de la base puis import des 40 articles, catégories et sources. Relancer cette commande n’importe pas les articles une seconde fois.
+
+**Vérifier le compte connecté.** `npx wrangler whoami` doit afficher le même compte que celui qui contient ta base dans le tableau de bord. Une connexion déjà enregistrée peut appartenir à un autre compte : dans ce cas, refaire `npx wrangler login` avec le bon compte. Une erreur « database could not be found » peut venir de cette différence de compte, même si le Database ID est correct. Il ne faut pas recréer la base pour corriger cette erreur.
 
 **Ne pas modifier les migrations déjà appliquées.** Les mises à jour d’articles se font ensuite avec le script ci-dessous ou D1 Studio. Une évolution du schéma se fait dans une nouvelle migration numérotée. [Documentation sur les migrations](https://developers.cloudflare.com/d1/reference/migrations/).
 
@@ -69,6 +79,8 @@ Dans le projet Pages : **Settings → Bindings → Add → D1 database**.
 - Base : **`big-digital-downloads-content`**.
 - Environnement : **Production**.
 - Enregistrer, puis relancer le déploiement.
+
+Un déploiement créé **avant** l’ajout du binding ne reçoit pas la connexion à D1 rétroactivement. Si `/api/health` indique encore `not_bound` alors que `DB` apparaît dans les réglages, ouvrir **Deployments**, puis relancer le déploiement de production avec **Retry deployment**. Un nouveau commit sur `main` déclenche aussi un nouveau déploiement si l’intégration GitHub est active.
 
 Pour Preview, utiliser une seconde base de test si tu souhaites tester D1 sur les branches. Sans binding, la version statique initiale reste consultable ; `/api/health` signale alors `not_bound`. Avec un binding cassé ou une base sans tables, le journal répond en erreur temporaire 503, sans masquer le problème avec des articles périmés. [Bindings Pages](https://developers.cloudflare.com/pages/functions/bindings/).
 
