@@ -17,6 +17,8 @@ def optimize(s, g):
         if node.parent: node.decompose()
     for node in s.select('[class]'):
         node['class']=[c for c in node['class'] if not c.startswith('hidden-')]
+    from home_interactions import restore
+    restore(s, g)
     # The remaining shared hero title is the sole H1, at every viewport.
     for node in s.select('h1')[1:]: node.name='p'
     for node in s.select('[data-framer-appear-id]'):
