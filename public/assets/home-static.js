@@ -11,10 +11,6 @@ document.querySelectorAll('a[href]').forEach(a=>{const raw=a.getAttribute('href'
 
 /* Restore the real controls behind the homepage demonstrations. */
 (()=>{'use strict';
-const steps=[...document.querySelectorAll('[data-step]')];
-function selectStep(value,focus=false){steps.forEach(button=>{const active=button.dataset.step===String(value);button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;document.getElementById(button.getAttribute('aria-controls')).hidden=!active;if(active&&focus)button.focus();});}
-steps.forEach((button,index)=>{button.addEventListener('click',()=>selectStep(button.dataset.step));button.addEventListener('keydown',event=>{let next;if(['ArrowDown','ArrowRight'].includes(event.key))next=(index+1)%steps.length;else if(['ArrowUp','ArrowLeft'].includes(event.key))next=(index+steps.length-1)%steps.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=steps.length-1;if(next!==undefined){event.preventDefault();selectStep(steps[next].dataset.step,true);}});});
-document.querySelectorAll('[data-next-step]').forEach(button=>button.addEventListener('click',()=>selectStep(button.dataset.nextStep,true)));
 const custom=document.querySelector('#use-cases');
 // Native keyboard activation for the retained original visual controls.
 custom?.querySelectorAll('[role=button]').forEach(control=>control.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();control.click();}}));
@@ -27,6 +23,4 @@ function language(lang){custom.querySelectorAll('[data-demo-language]').forEach(
 custom?.querySelectorAll('[data-demo-language]').forEach(button=>button.addEventListener('click',()=>language(button.dataset.demoLanguage)));
 custom?.querySelector('[data-cycle-language]')?.addEventListener('click',()=>{const keys=['en','zh','fr'];const active=custom.querySelector('[data-demo-language][aria-pressed=true]').dataset.demoLanguage;language(keys[(keys.indexOf(active)+1)%keys.length]);});
 custom?.querySelector('[data-demo-sender]')?.addEventListener('click',event=>{const button=event.currentTarget,active=button.getAttribute('aria-pressed')!=='true';button.setAttribute('aria-pressed',String(active));custom.querySelector('[data-sender-demo]').dataset.active=String(active);custom.querySelector('.framer-12pxh1y p').textContent=active?'hello@yourdomain.com':'john@example.com';custom.querySelector('.framer-16t42je p').textContent=active?'team@yourdomain.com':'john@example.com';button.querySelector('.framer-bmpz29 p').textContent=active?'Your brand. Your sender.':'Get your Domain Email';});
-const metrics={all:{downloads:['572','+12%'],revenue:['$143,801','+20%'],orders:['300','+12%'],customers:['250','+8%']},7:{downloads:['84','+16%'],revenue:['$8,640','+14%'],orders:['48','+9%'],customers:['42','+11%']},30:{downloads:['296','+18%'],revenue:['$38,950','+22%'],orders:['164','+15%'],customers:['138','+13%']}};
-document.querySelector('[data-analytics-period]')?.addEventListener('change',event=>{Object.entries(metrics[event.target.value]).forEach(([key,[value,change]])=>{document.querySelector('[data-metric="'+key+'"]').textContent=value;const node=document.querySelector('[data-metric-change="'+key+'"]');node.firstChild.textContent=change+' ';});});
 })();

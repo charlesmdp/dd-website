@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]; DIST=ROOT/'dist'; CONTENT=ROOT/'conten
 BASE='https://www.bigdigitaldownload.com'; APP='https://apps.shopify.com/digital-download-products'; DOCS='https://penida.gitbook.io/big-digital-download'; DATE='2026-09-22'
 esc=lambda x:html.escape(str(x),quote=True)
 DIST.mkdir(exist_ok=True)
-shutil.copytree(ROOT/'public',DIST,dirs_exist_ok=True)
+if __name__ == '__main__': shutil.copytree(ROOT/'public',DIST,dirs_exist_ok=True)
 ASSET_VERSION=hashlib.sha256((DIST/'assets/design.css').read_bytes()+(DIST/'assets/site.css').read_bytes()+(DIST/'assets/site.js').read_bytes()).hexdigest()[:10]
 product=json.loads((CONTENT/'product.json').read_text());PAGES={}
 NAMES={'sky-pilot':'Sky Pilot','filemonk':'Filemonk','fileflare':'Fileflare','easy-digital-products':'Easy Digital Products','shopify-digital-downloads':'Shopify Digital Products','sendowl':'SendOwl','pdf-pendora':'PDF Pendora','fetchapp':'FetchApp','ldt-digital-downloads':'LDT Digital Downloads'}

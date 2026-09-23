@@ -40,12 +40,24 @@ def optimize(s, g):
     # Cache the original detailed vector artwork separately from the document.
     templates=s.select_one('#svg-templates')
     if templates:
-        (dist/'assets/home-icons.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">'+templates.decode_contents()+'</svg>')
+        # HTML parsers lowercase SVG names; standalone SVG is case-sensitive XML.
+        # Preserve filters/gradients (otherwise the original 3D artwork disappears).
+        artwork=templates.decode_contents()
+        for name in ['clipPath','feBlend','feColorMatrix','feComposite','feFlood',
+                     'feGaussianBlur','feMorphology','feOffset','linearGradient',
+                     'radialGradient','feMerge','feMergeNode']:
+            artwork=re.sub(r'(<\/?|<)'+name.lower()+r'(?=[\s>])',lambda m:m.group(1)+name,artwork)
+        for name in ['viewBox','filterUnits','gradientUnits','gradientTransform',
+                     'maskUnits','maskContentUnits','stdDeviation','preserveAspectRatio']:
+            artwork=re.sub(r'\b'+name.lower()+r'=', name+'=', artwork)
+        artwork='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">'+artwork+'</svg>'
+        artwork_version=hashlib.sha256(artwork.encode()).hexdigest()[:10]
+        (dist/'assets/home-icons.svg').write_text(artwork)
         templates.decompose()
         for node in s.select('use'):
             for attr in ['href','xlink:href']:
                 val=node.get(attr,'')
-                if val.startswith('#svg'): node[attr]='/assets/home-icons.svg'+val
+                if val.startswith('#svg'): node[attr]='/assets/home-icons.svg?v='+artwork_version+val
     for comment in s.find_all(string=lambda text:isinstance(text,Comment)): comment.extract()
     for img in s.select('img'):
         img['decoding']='async'
@@ -71,4 +83,11 @@ def optimize(s, g):
     v=hashlib.sha256((dist/'assets/home-static.css').read_bytes()+(dist/'assets/home-static.js').read_bytes()).hexdigest()[:10]
     s.head.append(s.new_tag('link',rel='stylesheet',href='/assets/home-static.css?v='+v))
     s.body.append(s.new_tag('script',src='/assets/home-static.js?v='+v,defer=True))
+    from original_islands import build
+    build(dist)
+    runtime_version=hashlib.sha256((dist/'assets/runtime-v3/original-components.mjs').read_bytes()).hexdigest()[:12]
+    loader=dist/'assets/home-islands.js'
+    loader.write_text(loader.read_text().replace('original-components.mjs', 'original-components.mjs?v='+runtime_version))
+    island_version=hashlib.sha256((dist/'assets/home-islands.js').read_bytes()).hexdigest()[:10]
+    s.body.append(s.new_tag('script',type='module',src='/assets/home-islands.js?v='+island_version))
     return s
