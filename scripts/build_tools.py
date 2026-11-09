@@ -1,17 +1,78 @@
+"""Publish the seller toolbox, its HTML catalogue and the sitewide navigation."""
+from html import escape
+from studio_catalog import GROUPS, TOOLS
+from studio_legacy import register
+from studio_fields import FIELDS
+from studio_art import build_icons, OBJECTS
+from legacy_forms import FORMS
+register()
+ASSETS='/assets/tool-studio/'
+SYMBOL={'files':'files','images':'paint','catalog':'box','launch':'email'}
+GUIDES={'/features':'Digital delivery on Shopify','/faq':'BIG merchant questions','/sell-digital-art-on-shopify':'Sell digital art on Shopify','/sell-pdfs-on-shopify':'Sell PDFs on Shopify','/sell-canva-templates-on-shopify':'Sell Canva templates on Shopify','/sell-license-keys-on-shopify':'Sell license keys on Shopify','/sell-software-on-shopify':'Sell software on Shopify','/sell-ebooks-on-shopify':'Sell ebooks on Shopify','/sell-videos-on-shopify':'Sell videos on Shopify','/sell-online-courses-on-shopify':'Sell online courses on Shopify'}
+def art(key,cls='',eager=False):
+    return f'<img class="ws-art {cls}" src="{ASSETS}{key}.svg" width="144" height="128" alt="" loading="{"eager" if eager else "lazy"}" decoding="async">'
+def footer_links():
+    groups=[]
+    for key,(label,*_) in GROUPS.items():
+        links=''.join(f'<a href="/tools/{t["slug"]}">{escape(t["name"])}</a>' for t in TOOLS.values() if t['group']==key)
+        groups.append(f'<div><h4>{label}</h4>{links}</div>')
+    return '<nav class="footer-tools" aria-label="Free tools for digital sellers"><a class="footer-tools-title" href="/tools">Free tools for digital sellers <span aria-hidden="true">↗</span></a><div class="footer-tools-links">'+''.join(groups)+'</div></nav>'
+def card(t):
+    return f'<a class="ws-card" href="/tools/{t["slug"]}">{art(t["key"])}<div><h3>{escape(t["name"])}</h3><span>{escape(t["short"])} <span aria-hidden="true">↗</span></span></div></a>'
+def signature():
+    return f'<span class="ws-sign"><img src="/assets/media/dcf110d0e724d7863a28.webp" width="23" height="23" alt=""><b>BIG</b><i></i> Seller toolbox</span>'
+def crumbs(group=None):
+    return '<nav class="ws-crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span>'+('<a href="/tools">Free tools</a><span>›</span><a href="/tools#'+group+'">'+GROUPS[group][0]+'</a>' if group else '<span>Free tools</span>')+'</nav>'
+def faq(items,schema):
+    markup='<div class="ws-faq-list">'+''.join(f'<details><summary>{escape(q)}<span aria-hidden="true">+</span></summary><p>{escape(a)}</p></details>' for q,a in items)+'</div>'
+    data=schema({'@context':'https://schema.org','@type':'FAQPage','mainEntity':[{'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':a}} for q,a in items]})
+    return markup,data
 def build(g):
- page,hero,section,cards,button=g['page'],g['hero'],g['section'],g['cards'],g['button']
- tools=[('pdf-watermark','PDF watermark','Add a text watermark to every page. Your PDF stays in your browser.'),('merge-pdf','Merge PDFs','Combine several PDFs in the order you choose.'),('bandwidth-calculator','Download bandwidth calculator','Estimate your monthly data transfer and a matching BIG plan.'),('custom-qr-code-generator','QR code generator','Turn a product or download-page link into a downloadable QR code.'),('custom-bulk-number-generator','Bulk number generator','Create unique random numeric codes and export them as CSV.'),('revenue-calculator','Digital product revenue calculator','Estimate contribution after discounts, fees and app costs.')]
- inner='<div class="site-grid">'+''.join(f'<a class="site-card site-blog-card" href="/tools/{slug}"><span class="site-kicker">Free tool</span><h3>{name}</h3><p>{desc}</p><span class="read">Open tool →</span></a>' for slug,name,desc in tools)+'</div>'
- page('/tools','Free Tools for Digital Product Sellers | BIG','Watermark or merge PDFs, create QR codes, generate numbers and estimate bandwidth or digital product revenue. Free tools that run in your browser.',hero('Free tools','Small tools.<br>Big help for your next launch.','Prepare your files and plan your sales. Free, no account required, with processing in your browser.',actions=False)+section('Built for digital sellers','Get something useful done.',inner))
- configs={
- 'pdf-watermark':('''<label for="pdf-file">Your PDF (up to 50 MB)</label><input id="pdf-file" type="file" accept="application/pdf,.pdf" required><label for="watermark">Watermark text</label><input id="watermark" maxlength="120" value="Personal use only" required><div class="site-grid two"><div><label for="position">Position</label><select id="position"><option value="diagonal">Diagonal, centre of each page</option><option value="footer">Bottom of each page</option></select></div><div><label for="opacity">Opacity</label><select id="opacity"><option value="0.15">Light · 15%</option><option value="0.3" selected>Medium · 30%</option><option value="0.5">Strong · 50%</option></select></div></div><button class="site-button" type="submit">Watermark PDF</button>''','Add a visible reminder, not a false sense of security.','A watermark can discourage casual sharing. It does not encrypt the document or prevent screenshots. This tool applies the same text to every page; BIG’s in-app PDF stamping can personalise customer copies automatically.','pdf'),
- 'merge-pdf':('''<label for="merge-files">Choose PDFs (up to 20 files, 50 MB total)</label><input id="merge-files" type="file" accept="application/pdf,.pdf" multiple required><div id="merge-order" class="site-notice" hidden></div><button class="site-button" type="submit">Merge PDFs</button>''','One file. In the right order.','After selecting your PDFs, use the up and down buttons to set their order. Originals remain unchanged. Password-protected PDFs are not supported. Document-level forms, attachments, bookmarks and signatures may not survive a merge.','pdf'),
- 'bandwidth-calculator':('''<div class="site-grid two"><div><label for="file-mb">Average download size (MB)</label><input id="file-mb" type="number" min="0.01" max="1000000" step="any" value="100" required></div><div><label for="orders">Orders per month</label><input id="orders" type="number" min="0" max="100000000" step="1" value="1000" required></div><div><label for="downloads">Downloads per order</label><input id="downloads" type="number" min="1" max="1000" step="0.1" value="1.5" required></div><div><label for="storage">Total catalogue storage (GB)</label><input id="storage" type="number" min="0" max="1000000" step="any" value="10" required></div></div><label for="api"><input id="api" type="checkbox"> I need API access or webhooks</label><button class="site-button" type="submit">Estimate my usage</button>''','Storage is your shelf. Bandwidth is your delivery.','This estimate uses decimal units (1 GB = 1,000 MB; 1 TB = 1,000 GB), average completed downloads and repeat downloads. Actual usage can differ. It estimates BIG plan capacity, not a guaranteed invoice.',''),
- 'custom-qr-code-generator':('''<label for="qr-text">Link or text to encode</label><textarea id="qr-text" maxlength="1500" rows="3" required>https://www.bigdigitaldownload.com</textarea><button class="site-button" type="submit">Create QR code</button><div id="qr-preview" aria-label="Generated QR code"></div>''','A shortcut to the right place.','Use a product page, public resource or help page. Avoid embedding a private customer download link in a public QR code. Scan the result on a second device before printing.','qr'),
- 'custom-bulk-number-generator':('''<div class="site-grid two"><div><label for="code-count">Number of codes</label><input id="code-count" type="number" min="1" max="5000" step="1" value="100" required></div><div><label for="code-digits">Digits per code</label><input id="code-digits" type="number" min="4" max="24" step="1" value="12" required></div></div><label for="code-prefix">Optional prefix</label><input id="code-prefix" maxlength="12" pattern="[A-Za-z0-9_-]*" placeholder="BIG-"><button class="site-button" type="submit">Generate codes</button>''','Useful IDs, ready to export.','Codes are generated using your browser’s cryptographic random source and are unique within this batch. They are not automatically registered as Shopify discounts or software licences. Import and validate them in your own system. CSV cells are quoted to preserve leading zeroes in compatible importers.',''),
- 'revenue-calculator':('''<div class="site-grid two"><div><label for="unit-price">Product price (USD)</label><input id="unit-price" type="number" min="0" step="0.01" value="25" required></div><div><label for="sales">Monthly orders</label><input id="sales" type="number" min="0" step="1" value="100" required></div><div><label for="discount">Average discount (%)</label><input id="discount" type="number" min="0" max="100" step="0.1" value="0" required></div><div><label for="fee-percent">Payment fee (%)</label><input id="fee-percent" type="number" min="0" max="100" step="0.01" value="2.9" required></div><div><label for="fee-fixed">Payment fee per order (USD)</label><input id="fee-fixed" type="number" min="0" step="0.01" value="0.30" required></div><div><label for="monthly-cost">Monthly app & other fixed costs (USD)</label><input id="monthly-cost" type="number" min="0" step="0.01" value="9.99" required></div></div><button class="site-button" type="submit">Calculate contribution</button>''','Plan with your own numbers.','The payment-fee values are editable examples, not a quoted Shopify rate. This is contribution before taxes, refunds, advertising and creation costs unless you include those costs yourself. It is not a forecast or accounting statement.','')}
- for slug,name,desc in tools:
-  form,heading,note,lib=configs[slug]
-  extra=('<script defer src="/assets/vendor/pdf-lib.min.js"></script>' if lib=='pdf' else '<script defer src="/assets/vendor/qrcode.min.js"></script>' if lib=='qr' else '')+'<script defer src="/assets/tools.js"></script>'
-  body=f'<section class="site-section"><div class="site-wrap"><div class="site-breadcrumb"><a href="/">Home</a> / <a href="/tools">Free tools</a> / {name}</div><span class="site-kicker">Free · No account · In your browser</span><h1 style="font-size:clamp(36px,4vw,56px)">{name}</h1><p class="site-lead">{desc}</p><div class="site-editorial"><form class="site-card site-tool" id="tool-form" data-tool="{slug}">{form}<p class="tool-status" id="tool-status" role="status" aria-live="polite"></p><output id="tool-output" hidden></output><a id="tool-download" class="site-button orange" hidden download>Download</a></form><aside class="site-toc"><strong>{heading}</strong><p>{note}</p><a href="/tools">Browse all tools</a></aside></div></div></section>'+section('Next step','Ready to sell what you made?',f'<p class="site-lead">BIG handles delivery after a Shopify purchase, so you can focus on the next thing you create.</p>{button()}',soft=True)
-  page('/tools/'+slug,name+' — Free Online Tool | BIG',desc+' No signup. Processed locally in your browser.',body,extra)
+    page,icon,schema=g['page'],g['icon'],g['schema']
+    assert set(OBJECTS)==set(TOOLS)
+    build_icons(g['DIST']/'assets/tool-studio')
+    css=f'<link rel="stylesheet" href="{ASSETS}studio.css?v=1"><meta property="og:image" content="{g["BASE"]}{ASSETS}toolbox.webp">'
+    script=f'<script type="module" src="{ASSETS}studio.mjs?v=1"></script>'
+    tabs=''.join(f'<a href="#{key}">{icon(SYMBOL[key])}{group[0]}</a>' for key,group in GROUPS.items())
+    groups=''
+    for k,(label,title,about,_) in GROUPS.items():
+        tools=[t for t in TOOLS.values() if t['group']==k]
+        groups+=f'<section class="ws-category" id="{k}"><div class="ws-category-head"><div><span class="ws-overline">{icon(SYMBOL[k])} {label}</span><h2>{title}</h2></div><p>{about}</p></div><div class="ws-cards">'+''.join(card(t) for t in tools)+'</div></section>'
+    hubfaq=[('Do I need a BIG account or Shopify store?', 'No. All 26 tools are free to use without an account. The files and calculations run in your browser.'),('Which tools help me prepare an ebook launch?', 'Extract a chapter as a sample, make a front cover, add page numbers and package the finished files. Then use the pricing calculator and delivery email generator to prepare the listing.'),('How do I deliver the results to paying customers?', 'Download the finished file and attach it to a digital product in your fulfilment app. If you sell on Shopify, BIG can deliver the files or keys when the order is paid.')]
+    answers,data=faq(hubfaq,schema)
+    hero=f'<div class="ws-hub-hero"><div>{signature()}<h1>Free tools for<br><em>digital sellers.</em></h1><p>Prepare your downloads, price your products and get your Shopify launch ready. Pick a tool and make something you can use today.</p><a class="ws-btn" href="#directory">Explore all {len(TOOLS)} tools {icon("arrow")}</a></div><div class="ws-hub-art"><img src="{ASSETS}toolbox.webp" width="800" height="800" fetchpriority="high" alt="Illustrated orange toolbox filled with a book, a photo, a ruler and a price tag"></div></div>'
+    directory=f'<div id="directory" class="ws-directory"><div class="ws-navlinks">{tabs}</div><label class="ws-search"><span class="ws-sr">Find a tool</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" placeholder="Find a tool…" aria-label="Find a tool"></label></div><p class="ws-empty" role="status" hidden>No tools match that search. Try “PDF”, “price” or “cover”.</p>'
+    body=f'<div class="ws"><div class="ws-wrap">{crumbs()}{hero}{directory}{groups}<section class="ws-faq"><div><span class="ws-overline">Toolbox help</span><h2>Common questions</h2></div>{answers}</section></div></div>'
+    page('/tools','Free Tools for Digital Product Sellers on Shopify | BIG','26 free browser tools for Shopify digital sellers. Prepare PDFs and product images, price bundles, generate license keys and create launch assets. No signup.',body,css+script+data,kind='CollectionPage')
+    for t in TOOLS.values():
+        key,slug,name,group=t['key'],t['slug'],t['name'],t['group']
+        path='/tools/'+slug
+        extra=css
+        hero=f'<header class="ws-tool-head"><div>{signature()}<h1>{escape(name)}</h1><p>{escape(t["about"])}</p></div><div class="ws-tool-emblem {group}">{art(key,eager=True)}</div></header>'
+        studio_title=f'<div class="ws-pane-title"><span class="ws-pane-symbol">{icon(SYMBOL[group])}</span><h2>{escape(t["action"])}</h2></div>'
+        result_title=f'<div class="ws-pane-title"><span class="ws-pane-symbol">{icon("download")}</span><h2>Your result</h2></div>'
+        privacy=f'<small class="ws-local">{icon("shield")} Runs on your device · No account needed</small>'
+        placeholder=f'<div class="ws-placeholder">{art(key)}<span>Example result</span><strong>{escape(t["sample"])}</strong><small>{escape(t["result"])}</small></div>'
+        if key in FIELDS:
+            form=f'<form id="ws-form" data-tool="{key}"><div class="ws-pane-top">{studio_title}<button class="ws-demo" type="button" data-example>Try an example {icon("spark")}</button></div><div class="ws-fields">{FIELDS[key]}</div><p class="ws-status" role="status"></p><button class="ws-btn ws-primary" type="submit">{escape(t["action"])} {icon("arrow")}</button>{privacy}</form>'
+            output=f'<aside class="ws-result" tabindex="-1" aria-label="Tool result">{result_title}<div class="ws-output" aria-live="polite">{placeholder}</div><div class="ws-actions" hidden><a class="ws-btn ws-download" download>Download</a><button class="ws-quiet ws-copy" type="button" hidden>Copy</button></div></aside>'
+            extra+=script
+        else:
+            markup,_,_,lib=FORMS[slug]
+            form=f'<form class="site-tool ws-legacy" id="tool-form" data-tool="{slug}">{studio_title}{markup}<p class="ws-status" id="tool-status" role="status"></p>{privacy}</form>'
+            output=f'<aside class="ws-result ws-original-result" aria-label="Tool result">{result_title}{placeholder}<output id="tool-output" hidden></output><a id="tool-download" class="ws-btn" hidden download>Download</a></aside>'
+            extra+=(f'<script defer src="/assets/vendor/{"pdf-lib.min.js" if lib=="pdf" else "qrcode.min.js"}"></script>' if lib else '')+'<script defer src="/assets/tools.js"></script>'
+        work=f'<div class="ws-work">{form}{output}</div><noscript><p>Enable JavaScript to run this tool in your browser.</p></noscript>'
+        steps=''.join(f'<li>{escape(step)}</li>' for step in t['steps'])
+        how=f'<section class="ws-learn"><div><span class="ws-overline">Quick start</span><h2>How to use it</h2><ol>{steps}</ol></div><article class="ws-example"><span class="ws-overline">{icon("spark")} Worked example</span><h3>{escape(t["result"])}</h3><p>{escape(t["example"])}</p></article></section>'
+        answers,data=faq(t['faq'],schema)
+        question=f'<section class="ws-faq"><div><span class="ws-overline">Tool notes</span><h2>Frequently asked questions</h2><p>{escape(t["insight"])}</p></div>{answers}</section>'
+        related=''.join(card(TOOLS[k]) for k in t['related'])
+        guide=f'<a class="ws-guide" href="{t["guide"]}">{icon("box")}<span>Shopify guide<strong>{GUIDES[t["guide"]]}</strong></span>{icon("arrow")}</a>'
+        related=f'<section class="ws-related"><h2>Keep working</h2><div>{related}{guide}</div></section>'
+        body=f'<div class="ws"><div class="ws-wrap">{crumbs(group)}{hero}{work}{how}{question}{related}</div></div>'
+        app=schema({'@context':'https://schema.org','@type':'WebApplication','name':name,'url':g['BASE']+path,'description':t['about'],'applicationCategory':'BusinessApplication','operatingSystem':'Web','browserRequirements':'Requires JavaScript','inLanguage':'en','isAccessibleForFree':True,'offers':{'@type':'Offer','price':'0','priceCurrency':'USD'},'provider':{'@type':'Organization','name':'BIG Digital Downloads','url':g['BASE']}})
+        page(path,'Free '+name+' | BIG Digital Downloads',t['about'],body,extra+app+data)
+        # A form's default values and preview placeholders are not editorial prose.
+        sections=[f'# {name}',t['about'],'## How to use it','\n'.join(f'{i}. {s}' for i,s in enumerate(t['steps'],1)),'## Worked example',t['example'],t['insight'],'## Frequently asked questions',*['### '+q+'\n\n'+a for q,a in t['faq']],f'[Open the free tool]({g["BASE"]}{path})']
+        (g['DIST']/('tools/'+slug+'.md')).write_text('\n\n'.join(sections)+'\n')

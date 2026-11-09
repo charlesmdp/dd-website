@@ -28,32 +28,112 @@
     "description": "Build a digital commerce business with BIG. Resources for Shopify agencies, experts and affiliate partners."
   },
   "/tools": {
-    "title": "Free Tools for Digital Product Sellers | BIG",
-    "description": "Watermark or merge PDFs, create QR codes, generate numbers and estimate bandwidth or digital product revenue. Free tools that run in your browser."
+    "title": "Free Tools for Digital Product Sellers on Shopify | BIG",
+    "description": "26 free browser tools for Shopify digital sellers. Prepare PDFs and product images, price bundles, generate license keys and create launch assets. No signup."
+  },
+  "/tools/pdf-page-extractor": {
+    "title": "Free PDF page extractor | BIG Digital Downloads",
+    "description": "Choose pages from an ebook or workbook and save them as a separate PDF. Keep the order you enter to build a sample chapter or a custom handout."
+  },
+  "/tools/add-page-numbers-to-pdf": {
+    "title": "Free PDF page numberer | BIG Digital Downloads",
+    "description": "Add page numbers to a PDF workbook, ebook or printable. Choose the starting number and footer position, then download a numbered copy."
+  },
+  "/tools/digital-product-zip-maker": {
+    "title": "Free Digital product ZIP maker | BIG Digital Downloads",
+    "description": "Package a template, a readme and bonus files into one downloadable ZIP. Keep the original file bytes intact and give the bundle a buyer-friendly name."
+  },
+  "/tools/file-checksum-generator": {
+    "title": "Free SHA-256 file checksum generator | BIG Digital Downloads",
+    "description": "Fingerprint a digital download with SHA-256. Compare it with a checksum from a trusted source to see whether the two files have exactly the same contents."
+  },
+  "/tools/file-download-time-calculator": {
+    "title": "Free File download time calculator | BIG Digital Downloads",
+    "description": "Estimate how long a customer needs to download a file. Adjust the file size, connection speed and usable share of that speed to compare delivery scenarios."
+  },
+  "/tools/image-watermark-maker": {
+    "title": "Free Image watermark maker | BIG Digital Downloads",
+    "description": "Put a text watermark on a product preview or sample illustration. Choose its colour, position and opacity, then save a PNG at the original dimensions."
+  },
+  "/tools/image-to-webp-converter": {
+    "title": "Free Image to WebP converter | BIG Digital Downloads",
+    "description": "Convert a JPEG, PNG or WebP product image to a still WebP. Compare the actual file sizes at your chosen quality before downloading the result."
+  },
+  "/tools/shopify-product-image-resizer": {
+    "title": "Free Shopify product image resizer | BIG Digital Downloads",
+    "description": "Fit a product image to an exact canvas size. Keep the whole image with padding or fill the frame with a centre crop, then download a ready-to-use PNG."
+  },
+  "/tools/ebook-cover-maker": {
+    "title": "Free Ebook cover maker | BIG Digital Downloads",
+    "description": "Design a typographic front cover for a digital guide. Choose an art direction, add your title and author credit, and export a 1,600 \u00d7 2,560 PNG."
+  },
+  "/tools/printable-dpi-calculator": {
+    "title": "Free Printable DPI calculator | BIG Digital Downloads",
+    "description": "See how large a digital art file can print at a chosen pixel density. Enter its pixel dimensions and get the physical print size in inches and centimetres."
+  },
+  "/tools/digital-product-pricing-calculator": {
+    "title": "Free Digital product pricing calculator | BIG Digital Downloads",
+    "description": "Work backwards from a target contribution margin. Enter your per-sale costs and payment fees to find a price floor for a digital product."
+  },
+  "/tools/digital-product-break-even-calculator": {
+    "title": "Free Digital product break-even calculator | BIG Digital Downloads",
+    "description": "Find how many paid orders recover the cost of creating a digital product. Include per-sale expenses and payment fees before counting a sale towards your launch."
+  },
+  "/tools/bundle-discount-calculator": {
+    "title": "Free Bundle discount calculator | BIG Digital Downloads",
+    "description": "Compare a bundle price with the standalone prices of its contents. See the buyer\u2019s saving, effective discount and combined list value before publishing the offer."
+  },
+  "/tools/bulk-license-key-generator": {
+    "title": "Free Bulk license key generator | BIG Digital Downloads",
+    "description": "Generate grouped, readable alphanumeric keys for a software release. Add a product prefix and download a CSV you can register in your own licensing system."
+  },
+  "/tools/digital-product-sku-generator": {
+    "title": "Free Product SKU generator | BIG Digital Downloads",
+    "description": "Build consistent SKU codes for combinations of digital product editions and formats. Preview the variant matrix and download a CSV inventory sheet."
+  },
+  "/tools/product-serp-preview": {
+    "title": "Free Product SERP preview | BIG Digital Downloads",
+    "description": "Preview how a product page title, URL and meta description could read in search. Edit the wording side by side, then copy or download the HTML title and meta tag."
+  },
+  "/tools/utm-link-builder": {
+    "title": "Free UTM campaign link builder | BIG Digital Downloads",
+    "description": "Tag a public product URL for a newsletter, creator partnership or launch post. Keep existing product parameters and get a correctly encoded campaign link."
+  },
+  "/tools/digital-download-email-generator": {
+    "title": "Free Digital download email generator | BIG Digital Downloads",
+    "description": "Write a clear delivery email with a product name, download link, opening instructions and support address. Copy the subject and message or save them as a text file."
+  },
+  "/tools/canva-template-delivery-pdf": {
+    "title": "Free Canva template delivery PDF maker | BIG Digital Downloads",
+    "description": "Turn a Canva template link into a branded one-page PDF with a clickable access button. Give Shopify customers a small, clear handout instead of a bare URL."
+  },
+  "/tools/product-faq-builder": {
+    "title": "Free Product FAQ builder | BIG Digital Downloads",
+    "description": "Turn your own product questions and answers into an accessible accordion. Preview the questions, then export HTML with matching FAQPage JSON-LD."
   },
   "/tools/pdf-watermark": {
-    "title": "PDF watermark \u2014 Free Online Tool | BIG",
-    "description": "Add a text watermark to every page. Your PDF stays in your browser. No signup. Processed locally in your browser."
+    "title": "Free PDF watermark tool | BIG Digital Downloads",
+    "description": "Stamp a text watermark onto every page of an ebook or printable PDF. Adjust placement and opacity and download a marked copy."
   },
   "/tools/merge-pdf": {
-    "title": "Merge PDFs \u2014 Free Online Tool | BIG",
-    "description": "Combine several PDFs in the order you choose. No signup. Processed locally in your browser."
+    "title": "Free PDF merger | BIG Digital Downloads",
+    "description": "Combine PDFs into one download and set the order before saving. Useful for a workbook with a separate cover, exercises and answer sheets."
   },
   "/tools/bandwidth-calculator": {
-    "title": "Download bandwidth calculator \u2014 Free Online Tool | BIG",
-    "description": "Estimate your monthly data transfer and a matching BIG plan. No signup. Processed locally in your browser."
+    "title": "Free Download bandwidth calculator | BIG Digital Downloads",
+    "description": "Estimate monthly transfer for a digital download catalogue and compare it with BIG\u2019s listed paid-plan capacity."
   },
   "/tools/custom-qr-code-generator": {
-    "title": "QR code generator \u2014 Free Online Tool | BIG",
-    "description": "Turn a product or download-page link into a downloadable QR code. No signup. Processed locally in your browser."
+    "title": "Free QR code generator | BIG Digital Downloads",
+    "description": "Turn a public product link into a downloadable SVG QR code for an insert, printable guide or launch poster."
   },
   "/tools/custom-bulk-number-generator": {
-    "title": "Bulk number generator \u2014 Free Online Tool | BIG",
-    "description": "Create unique random numeric codes and export them as CSV. No signup. Processed locally in your browser."
+    "title": "Free Bulk number generator | BIG Digital Downloads",
+    "description": "Generate a batch of unique random numeric identifiers. Choose the length and an optional prefix, then export the values as CSV."
   },
   "/tools/revenue-calculator": {
-    "title": "Digital product revenue calculator \u2014 Free Online Tool | BIG",
-    "description": "Estimate contribution after discounts, fees and app costs. No signup. Processed locally in your browser."
+    "title": "Free Digital product revenue calculator | BIG Digital Downloads",
+    "description": "Model monthly contribution from digital product sales after discounts, percentage fees, per-order fees and fixed monthly costs."
   },
   "/big-digital-downloads-vs-sky-pilot": {
     "title": "BIG vs Sky Pilot: Features & Pricing (2026)",

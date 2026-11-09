@@ -10,7 +10,7 @@ Site marketing et journal de BIG Digital Downloads, prêt pour **Cloudflare Page
 - Fonctionnalités, FAQ, partenaires, pages juridiques et 404.
 - 9 comparatifs, 9 pages d’alternatives, logos réels et illustrations.
 - 40 articles réécrits et illustrés, aux adresses d’origine, rendus en HTML depuis D1.
-- 6 outils gratuits qui fonctionnent dans le navigateur.
+- 26 outils gratuits qui fonctionnent dans le navigateur.
 - Sitemap, robots, métadonnées, données structurées, Markdown et références pour lecteurs IA.
 - Sources documentées pour la comparaison Pendora, avec images officielles intactes.
 

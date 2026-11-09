@@ -151,9 +151,9 @@ Le journal utilise un rendu HTML côté serveur, avec métadonnées et données 
 - Pendora : les sources publiques ne prouvent ni des limites d’upload « minuscules », ni une copie, ni un futur passage payant. Le site présente les limites non publiées, les captures authentiques et le témoignage daté relatif à Pumper avec son contexte.
 
 
-## Version éditoriale et SEO de septembre 2026
+## État des pages éditoriales et des outils
 
-- 86 pages indexables : 40 articles aux adresses historiques et 9 nouvelles pages commerciales par type de produit, en plus des pages existantes.
+- 106 pages indexables, dont 40 articles aux adresses historiques, 26 outils gratuits et 9 pages commerciales par type de produit.
 - La migration `0003_editorial_refresh.sql` enrichit les articles existants sans créer de doublons ni modifier leur statut de publication.
 - Sommaire repliable dans le corps de l’article, illustrations WebP et dix guides approfondis.
 - Note et nombre d’avis centralisés dans `content/product.json` → `reviews`. Revoir cette valeur sur la fiche Shopify avant de l’actualiser.
